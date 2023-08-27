@@ -1,0 +1,152 @@
+<?= $this->extend('layout/app') ?>
+
+<?= $this->section('content') ?>
+<div class="card">
+    <div class="card-header border-0">
+        <h3 class="card-title">Form PIC</h3>
+    </div>
+
+    <div class="card-body">
+        <form action="<?= site_url('pic/' . $action) . ($action == 'update' ? '/' . $row->id_list_pic : '') ?>" method="POST">
+
+            <div class="form-group">
+                <label>Jabatan</label><br />
+                <input disabled class="form-control" type="text" name="nama_ugm" value="<?= $row->jabatan; ?>">
+            </div>
+
+            <div class="form-group">
+                <label>Nama</label><br />
+                <input class="form-control" type="text" name="nama_ugm" value="<?= $row->nama_ugm; ?>">
+            </div>
+
+            <div class="form-group">
+                <label>No Telp</label><br />
+                <input class="form-control" type="text" name="no_telp_ugm" value="<?= $row->no_telp_ugm; ?>">
+            </div>
+
+            <div class="form-group">
+                <label>Alamat</label><br />
+                <input class="form-control" type="text" name="alamat_ugm" value="<?= $row->alamat_ugm; ?>">
+            </div>
+
+            <br />
+
+            <div class="card my-4" style="background-color: #ddd; border:solid #aaa 1px;">
+                    <div class="card-header">
+                        <h3 class="card-title">Pencarian Nama Dosen/Tendik</h3>
+                    </div>
+
+                    <div class="card-body">
+                        Cari: <input id="pegawai-search" class="form-control">
+                        <table class="table table-sm table-bordered" id="tabel-search">
+                            <tr>
+                                <td>Nama</td>
+                                <td id="user_nama"></td>
+                                <td><i style="cursor:pointer;" onclick="copas($('#user_nama').text());return false;" class="fa-solid fa-copy" title="copy"></i></td>
+                            </tr>
+                            <tr>
+                                <td>NIP</td>
+                                <td id="user_nip"></td>
+                                <td><i style="cursor:pointer;" onclick="copas($('#user_nip').text());return false;" class="fa-solid fa-copy" title="copy"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Prodi</td>
+                                <td id="user_prodi"></td>
+                                <td><i style="cursor:pointer;" onclick="copas($('#user_prodi').text());return false;" class="fa-solid fa-copy" title="copy"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Departemen</td>
+                                <td id="user_departemen"></td>
+                                <td><i style="cursor:pointer;" onclick="copas($('#user_departemen').text());return false;" class="fa-solid fa-copy" title="copy"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Pangkat</td>
+                                <td id="user_pangkat"></td>
+                                <td><i style="cursor:pointer;" onclick="copas($('#user_pangkat').text());return false;" class="fa-solid fa-copy" title="copy"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Golongan</td>
+                                <td id="user_golongan"></td>
+                                <td><i style="cursor:pointer;" onclick="copas($('#user_golongan').text());return false;" class="fa-solid fa-copy" title="copy"></i></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            
+            <!-- <button type="reset" class="btn btn-warning">Reset Password</button> -->
+            <!-- <button type="submit" class="btn btn-success" name="status" value="4">Simpan Draft</button> -->
+            <button type="submit" class="btn btn-primary" name="status" value="1">Simpan</button>
+
+        </form>
+    </div>
+</div>
+
+<?= $this->endSection() ?>
+
+<?= $this->section('css') ?>
+<link href="<?= base_url('magicsuggest.css'); ?>" rel="stylesheet">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+<?= $this->endSection() ?>
+
+<?= $this->section('js') ?>
+<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+<script src="<?= base_url('magicsuggest.js'); ?>"></script>
+<script>
+$(document).ready(function(e) {
+        $('#tabel-search').hide();
+        $("#pegawai-search").autocomplete({
+                minLength: 0,
+                source: function(request, response) {
+                    $.ajax({
+                        url: "<?= base_url('home/autocomplete'); ?>",
+                        dataType: "json",
+                        data: {
+                            term: request.term,
+                        },
+                        success: response,
+                        error: function(xhr, textStatus, errorThrown) {
+                        console.log(xhr.responseText);
+                            } 
+                    });
+                },
+                focus: function(event, ui) {
+                    // $("#pegawai-search").val(ui.item.username);
+                    return false;
+                },
+                select: function(event, ui) {
+                    $('#tabel-search').show();
+                    $("#pegawai-search").val(ui.item.username);
+                    $("#user_username").html(ui.item.username);
+                    $("#user_nama").html(ui.item.nama_publikasi);
+                    $("#user_nip").html(ui.item.nip);
+                    $("#user_prodi").html(ui.item.prodi);
+                    $("#user_departemen").html(ui.item.departemen);
+                    $("#user_pangkat").html(ui.item.pangkat);
+                    $("#user_golongan").html(ui.item.golongan);
+                    
+                    return false;
+                }
+            })
+            .autocomplete("instance")._renderItem = function(ul, item) {
+                return $("<li>")
+                    .append("<div>" + item.nama_publikasi + "<br>" + item.nip + "</div>")
+                    .appendTo(ul);
+            };
+        });
+    
+    function copas(text){
+      // let text = document.getElementById(input).value;
+      const textArea = document.createElement("textarea");
+      textArea.value = text;
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+      try {
+        document.execCommand('copy');
+      } catch (err) {
+        console.error('Unable to copy to clipboard', err);
+      }
+      document.body.removeChild(textArea);
+    }
+</script>
+<?= $this->endSection() ?>

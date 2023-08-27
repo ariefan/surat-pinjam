@@ -1,0 +1,1459 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>ADMIN SIMASTER: Daftar Penomoran Surat Keluar</title>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="csrf-token" content="52811b6d6e3a90810423968f43040b3c">
+    <meta name="csrf-name" content="csrf_ugmfw_token">
+    <meta name="csrf-cookie" content="csrf_ugmfw_cookie">
+
+    <link rel="shortcut icon"
+        href="https://admin.simaster.ugm.ac.id/ugmfw-assets/images/favicon.ico?v=40b8d02bf10ad79dd188294dc69f5c5a">
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,800,300&amp;subset=latin"
+        rel="stylesheet" type="text/css">
+    <link
+        href="https://admin.simaster.ugm.ac.id/ugmfw-assets/plugins/pace/css/black/pace-theme-minimal.css?v=40b8d02bf10ad79dd188294dc69f5c5a"
+        media="all" rel="stylesheet" type="text/css">
+    <link
+        href="https://admin.simaster.ugm.ac.id/ugmfw-assets/plugins/fontawesome/css/font-awesome.min.css?v=40b8d02bf10ad79dd188294dc69f5c5a"
+        rel="stylesheet" type="text/css">
+    <link
+        href="https://admin.simaster.ugm.ac.id/ugmfw-assets/css/jquery-ui-1.12.1.min.css?v=40b8d02bf10ad79dd188294dc69f5c5a"
+        rel="stylesheet" type="text/css">
+    <link
+        href="https://admin.simaster.ugm.ac.id/ugmfw-assets/css/bootstrap-datetimepicker.min.css?v=40b8d02bf10ad79dd188294dc69f5c5a"
+        rel="stylesheet" type="text/css">
+
+    <!--[if !IE]> -->
+    <script
+        src="https://admin.simaster.ugm.ac.id/ugmfw-assets/js/jquery-2.2.0.min.js?v=40b8d02bf10ad79dd188294dc69f5c5a"></script>
+    <!-- <![endif]-->
+    <!--[if lte IE 9]>
+            <script src="https://admin.simaster.ugm.ac.id/ugmfw-assets/js/jquery-1.12.0.min.js?v=40b8d02bf10ad79dd188294dc69f5c5a"></script>
+        <![endif]-->
+    <script>
+        document.write = function (s) {
+            var scripts = document.getElementsByTagName('script');
+            var lastScript = scripts[scripts.length - 1];
+            lastScript.insertAdjacentHTML("beforebegin", s);
+        }
+    </script>
+    <script>function _pxDemo_loadStylesheet(a, b, c) {
+            var c = c || decodeURIComponent((new RegExp(";\\s*" + encodeURIComponent("px-demo-theme") + "\\s*=\\s*([^;]+)\\s*;", "g").exec(";" + document.cookie + ";") || [])[1] || "default"), d = "1" === decodeURIComponent((new RegExp(";\\s*" + encodeURIComponent("px-demo-rtl") + "\\s*=\\s*([^;]+)\\s*;", "g").exec(";" + document.cookie + ";") || [])[1] || "0");
+            document.write(a.replace(/^(.*?)((?:\.min)?\.css)$/, '<link href="$1' + (c.indexOf("dark") !== -1 && a.indexOf("/css/") !== -1 && a.indexOf("/themes/") === -1 ? "-dark" : "") + (d ? ".rtl" : "") + '$2" rel="stylesheet" type="text/css"' + (b ? 'class="' + b + '"' : "") + ">"))
+        }</script>
+    <script>"1" === decodeURIComponent((new RegExp(";\\s*" + encodeURIComponent("px-demo-rtl") + "\\s*=\\s*([^;]+)\\s*;", "g").exec(";" + document.cookie + ";") || [])[1] || "0") && document.getElementsByTagName("html")[0].setAttribute("dir", "rtl");</script>
+    <link href="https://admin.simaster.ugm.ac.id/ugmfw-assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"
+        class="px-demo-stylesheet-core">
+    <link href="https://admin.simaster.ugm.ac.id/ugmfw-assets/css/pixeladmin.min.css" rel="stylesheet" type="text/css"
+        class="px-demo-stylesheet-bs">
+    <link href="https://admin.simaster.ugm.ac.id/ugmfw-assets/css/widgets.min.css" rel="stylesheet" type="text/css"
+        class="px-demo-stylesheet-widgets">
+    <script>
+        _pxDemo_loadStylesheet('https://admin.simaster.ugm.ac.id/ugmfw-assets/css/bootstrap.min.css', 'px-demo-stylesheet-core');
+        _pxDemo_loadStylesheet('https://admin.simaster.ugm.ac.id/ugmfw-assets/css/pixeladmin.min.css', 'px-demo-stylesheet-bs');
+        _pxDemo_loadStylesheet('https://admin.simaster.ugm.ac.id/ugmfw-assets/css/widgets.min.css', 'px-demo-stylesheet-widgets');
+    </script>
+    <link href="https://admin.simaster.ugm.ac.id/ugmfw-assets/css/themes/default.min.css" rel="stylesheet"
+        type="text/css" class="px-demo-stylesheet-theme">
+    <script>
+        function _pxDemo_loadTheme(a) {
+            var b = decodeURIComponent((new RegExp(";\\s*" + encodeURIComponent("px-demo-theme") + "\\s*=\\s*([^;]+)\\s*;", "g").exec(";" + document.cookie + ";") || [])[1] || "default");
+            _pxDemo_loadStylesheet(a + b + ".min.css", "px-demo-stylesheet-theme", b)
+        }
+        _pxDemo_loadTheme('https://admin.simaster.ugm.ac.id/ugmfw-assets/css/themes/');
+    </script>
+    <link href="https://admin.simaster.ugm.ac.id/ugmfw-assets/css/demo.css" rel="stylesheet" type="text/css">
+    <link href="https://admin.simaster.ugm.ac.id/ugmfw-assets/css/custom-template.css" rel="stylesheet" type="text/css">
+    <link href="https://admin.simaster.ugm.ac.id/ugmfw-assets/css/ugmfw-custom.css" rel="stylesheet" type="text/css">
+    <script>
+        _pxDemo_loadStylesheet('https://admin.simaster.ugm.ac.id/ugmfw-assets/css/demo.css');
+        _pxDemo_loadStylesheet('https://admin.simaster.ugm.ac.id/ugmfw-assets/css/custom-template.css', '');
+        _pxDemo_loadStylesheet('https://admin.simaster.ugm.ac.id/ugmfw-assets/css/ugmfw-custom.css', '');
+    </script>
+    <style type="text/css">
+        .jqstooltip {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            visibility: hidden;
+            background: rgb(0, 0, 0) transparent;
+            background-color: rgba(0, 0, 0, 0.6);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+            -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+            color: white;
+            font: 10px arial, san serif;
+            text-align: left;
+            white-space: nowrap;
+            padding: 5px;
+            border: 1px solid white;
+            box-sizing: content-box;
+            z-index: 10000;
+        }
+
+        .jqsfield {
+            color: white;
+            font: 10px arial, san serif;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body class="  px-navbar-fixed   pace-done">
+    <div class="pace  pace-inactive">
+        <div class="pace-progress" style="transform: translate3d(100%, 0px, 0px);" data-progress-text="100%"
+            data-progress="99">
+            <div class="pace-progress-inner"></div>
+        </div>
+        <div class="pace-activity"></div>
+    </div>
+    <div id="px-breakpoint-lg"></div>
+    <div id="px-breakpoint-md"></div>
+    <div id="px-breakpoint-sm"></div>
+    <div id="px-breakpoint-xs"></div>
+    <script type="text/javascript">
+        var pxInit = [];
+        var checked = [];
+        var url = '';
+        var env = "production";
+        var base = "https://admin.simaster.ugm.ac.id/";
+        var app = "browser";
+        var cs = "https://wa.me/628112826546?text=Akun UGM: %0AMenu: %0AURL: https://admin.simaster.ugm.ac.id/ugmfw/change_group/%0ALapor: ";
+        var xhr = null;
+        if (typeof XMLHttpRequest === "undefined") {
+            xhr = function () {
+                try {
+                    return new ActiveXObject("Msxml2.XMLHTTP.6.0");
+                } catch (e) {
+                }
+                try {
+                    return new ActiveXObject("Msxml2.XMLHTTP.3.0");
+                } catch (e) {
+                }
+                try {
+                    return new ActiveXObject("Microsoft.XMLHTTP");
+                } catch (e) {
+                }
+            };
+        } else {
+            xhr = new XMLHttpRequest();
+        }
+        var to, to_10, to_20;
+        localStorage['ugmfwCache'] = '';
+    </script>
+    <style type="text/css">
+        .outer {
+            display: table;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+        }
+
+        .middle {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        .inner {
+            margin-left: auto;
+            margin-right: auto;
+            width: 400px;
+        }
+    </style>
+    <noscript>
+        <style>
+            .px-script-content {
+                display: none
+            }
+        </style>
+        <div class="page-header">
+            <h1><i class="page-header-icon fa fa-unlink"></i>&nbsp;Error Occurred</h1>
+        </div>
+        <div class="note note-danger"><b>Sorry</b>, You don't have javascript enabled in your browser.</div>
+    </noscript>
+    <div class="px-script-content px-navbar-fixed">
+        <nav class="px-nav px-nav-off-canvas px-nav-fixed px-nav-left px-nav-animate" id="px-demo-nav">
+            <button type="button" class="px-nav-toggle" data-toggle="px-nav" id="px-demo-nav-collapse">
+                <span class="px-nav-toggle-arrow"></span>
+                <span class="navbar-toggle-icon"></span>
+                <span class="px-nav-toggle-label font-size-11">HIDE MENU</span>
+            </button>
+            <div class="px-nav-scrollable-area">
+                <ul class="px-nav-content ps-container ps-theme-default ps-active-y"
+                    data-ps-id="d827f7d8-2acb-2bef-cc0c-3c3ae4b320a2">
+                    <li class="px-nav-box p-a-3 b-b-1" id="demo-px-nav-box">
+                        <img src="https://admin.simaster.ugm.ac.id/ugmfw-assets/images/user-icon.png" alt=""
+                            class="pull-xs-left m-r-2 border-round" style="width: 54px; height: 54px;">
+                        <div class="font-size-16">
+                            <span class="text-semibold">admin_penomoran_unit</span>
+                            <br><i class="text-slim" id="user_tipe_nomor">9177</i>
+                        </div>
+                        <div class="btn-group" style="margin-top: 4px;">
+                            <a href="https://admin.simaster.ugm.ac.id/ugmfw/change_group/view_change_group"
+                                class="btn btn-xs btn-primary btn-outline" title="Switch Group"><i
+                                    class="fa fa-random"></i></a>
+                            <a href="https://admin.simaster.ugm.ac.id/ugmfw/signin/signout_proses"
+                                class="btn btn-xs btn-danger btn-outline ugmfw-logout" title="Logout"><i
+                                    class="fa fa-power-off"></i></a>
+                        </div>
+                    </li>
+
+
+                    <li class="px-nav-dropdown px-nav-item px-open">
+                        <a href="#" class="">
+
+                            <i class="px-nav-icon fa fa-envelope-o"></i>
+
+                            <span class="px-nav-label">Persuratan</span>
+
+
+                        </a>
+
+                        <ul class="px-nav-dropdown-menu">
+
+
+                            <li class="px-nav-item active">
+                                <a href="https://admin.simaster.ugm.ac.id/surat/surat_keluar/"
+                                    class="xhr dest_subcontent-element">
+
+                                    <i class="px-nav-icon fa fa-angle-right"></i>
+
+                                    <span class="px-nav-label">Penomoran Surat Keluar</span>
+
+
+                                </a>
+
+
+                            </li>
+
+                        </ul>
+
+                    </li>
+                    <li class="px-nav-item">
+                        <a href="https://admin.simaster.ugm.ac.id/ugmfw/change_group/"
+                            class="xhr dest_subcontent-element">
+                            <i class="px-nav-icon fa fa-random"></i>
+                            <span class="px-nav-label">Ganti Group</span>
+                        </a>
+                    </li>
+                    <li class="px-nav-item">
+                        <a href="https://admin.simaster.ugm.ac.id/ugmfw/change_password/"
+                            class="xhr dest_subcontent-element">
+                            <i class="px-nav-icon fa fa-lock"></i>
+                            <span class="px-nav-label">Ganti Password</span>
+                        </a>
+                    </li>
+                    <li class="px-nav-item">
+                        <a href="https://admin.simaster.ugm.ac.id/ugmfw/signin/signout_proses/" class="ugmfw-logout">
+                            <i class="px-nav-icon fa fa-power-off"></i>
+                            <span class="px-nav-label">Logout</span>
+                        </a>
+                    </li>
+                    <li class="px-nav-box b-t-1 p-a-2">
+                        <a href="#" class="btn btn-primary btn-block btn-outline">
+                            <b>UGM</b> Framework 3.2 </a>
+                    </li>
+                    <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 3px;">
+                        <div class="ps-scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+                    </div>
+                    <div class="ps-scrollbar-y-rail" style="top: 0px; right: 3px; height: 185px;">
+                        <div class="ps-scrollbar-y" tabindex="0" style="top: 0px; height: 73px;"></div>
+                    </div>
+                </ul>
+            </div>
+            <script>
+                $('li.px-nav-item a').click(function (event) {
+                    menu_selected(this);
+                });
+
+                function menu_selected(object) {
+                    var url = typeof object !== 'undefined' ? object.getAttribute("href") : location.pathname;
+                    var split_url = url.split('/');
+                    var join_url = url;
+                    for (i = 0; i <= split_url.length; i++) {
+                        if (join_url !== "") {
+                            if ($('li.px-nav-item a[href$="' + join_url + '/"]').length > 0) {
+                                $('.px-nav-item').removeClass("active");
+                                $('.px-nav-dropdown').removeClass("active");
+
+                                $('li.px-nav-item a[href$="' + join_url + '/"]').parents('li.px-nav-dropdown').addClass('px-open');
+                                $('li.px-nav-item a[href$="' + join_url + '"]').parents('li.px-nav-dropdown').addClass('active');
+                                $('li.px-nav-item a[href$="' + join_url + '/"]').parent().addClass('active');
+                                return;
+                            }
+                        }
+                        split_url = join_url.split('/');
+                        split_url.pop();
+                        join_url = split_url.join('/');
+                    }
+                }
+
+                function url_selected(url) {
+                    var split_url = url.split('/');
+                    var join_url = url;
+                    for (i = 0; i <= split_url.length; i++) {
+                        if (join_url !== "") {
+                            if ($('li.px-nav-item a[href$="' + join_url + '/"]').length > 0) {
+                                $('.px-nav-item').removeClass("active");
+                                $('.px-nav-dropdown').removeClass("active");
+
+                                $('li.px-nav-item a[href$="' + join_url + '/"]').parents('li.px-nav-dropdown').addClass('px-open');
+                                $('li.px-nav-item a[href$="' + join_url + '"]').parents('li.px-nav-dropdown').addClass('active');
+                                $('li.px-nav-item a[href$="' + join_url + '/"]').parent().addClass('active');
+                                return;
+                            }
+                        }
+                        split_url = join_url.split('/');
+                        split_url.pop();
+                        join_url = split_url.join('/');
+                    }
+                }
+            </script>
+        </nav>
+        <nav class="navbar px-navbar">
+            <div class="navbar-header">
+                <a class="navbar-brand px-demo-brand" href="#_">ADMIN SIMASTER</a>
+            </div>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                data-target="#px-demo-navbar-collapse" aria-expanded="false"><i class="navbar-toggle-icon"></i></button>
+            <div class="collapse navbar-collapse" id="px-demo-navbar-collapse">
+                <ul class="nav navbar-nav"></ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                            aria-expanded="false">
+                            <img src="https://admin.simaster.ugm.ac.id/ugmfw-assets/images/user-icon.png" alt=""
+                                class="px-navbar-image">
+                            <span class="hidden-md">
+                                Faizal Makhrus, S.Kom., M.Sc., Ph.D. <i> (admin_penomoran_unit) </i>
+                            </span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="https://admin.simaster.ugm.ac.id/ugmfw/change_group/"
+                                    class="xhr dest_subcontent-element"><i
+                                        class="dropdown-icon fa fa-random"></i>&nbsp;&nbsp;Ganti Group</a></li>
+                            <li><a href="https://admin.simaster.ugm.ac.id/ugmfw/change_password/"
+                                    class="xhr dest_subcontent-element"><i
+                                        class="dropdown-icon fa fa-unlock-alt"></i>&nbsp;&nbsp;&nbsp;Ganti Password</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li><a href="https://admin.simaster.ugm.ac.id/ugmfw/signin/signout_proses"
+                                    class="ugmfw-logout"><i
+                                        class="dropdown-icon fa fa-power-off"></i>&nbsp;&nbsp;Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="busy-indicator modal-backdrop fade in" style="display: none; z-index: 999;">
+            <div class="row">
+                <div class="col-sm-12" style="text-align:center;margin-top:15%;">
+                    <img src="https://admin.simaster.ugm.ac.id/ugmfw-assets/images/ugm.png"><br>
+                    <h3>ADMIN SIMASTER</h3><br>
+                    <img src="https://admin.simaster.ugm.ac.id/ugmfw-assets/images/load-baru.gif">
+                </div>
+            </div>
+        </div>
+        <div class="px-content" id="subcontent-element" style="undefined display: block;">
+            <div class="page-header">
+                <div class="row">
+                    <div class="col-md-4 text-xs-center text-md-left text-nowrap">
+                        <h1><i class="page-header-icon fa "></i>&nbsp;<strong>Tambah/Ubah</strong>&nbsp;Penomoran Surat
+                            Keluar</h1>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript">
+                if ($('.modal.in, .modal.show').length === 0) {
+                    $(document).ajaxComplete(function () {
+                        document.title = 'ADMIN SIMASTER: ' + 'Tambah/Ubah Surat Keluar';
+                    });
+                    $(document).ready(function () {
+                        document.title = 'ADMIN SIMASTER: ' + 'Tambah/Ubah Surat Keluar';
+                    });
+                }
+            </script>
+
+            <a href="https://admin.simaster.ugm.ac.id/surat/surat_keluar/"
+                class="btn btn-labeled btn-warning xhr dest_subcontent-element" data-toggle="tooltip"
+                data-placement="top" title="Kembali">
+                <span class="btn-label-icon left icon fa fa-arrow-left"></span> Kembali
+            </a><br><br>
+            <div class="panel">
+                <div class="panel-heading">
+                    <span class="panel-title">Surat Keluar</span>
+                </div>
+                <div class="panel-body">
+                    <div id="validation" style="display:none;"></div>
+
+                    <form rel="ajax" class="form-horizontal xhr dest_subcontent-element" method="post"
+                        action="https://admin.simaster.ugm.ac.id/surat/surat_keluar/add/">
+                        <input id="csrf" type="hidden" name="csrf_ugmfw_token" value="80db98e3716977feeac6debc2fde39a7">
+                        <input type="hidden" value="" name="id">
+
+
+                        <div class="row form-group">
+                            <label class="col-sm-2 control-label" style="text-align:left;">
+                                Perihal <span style="color:red;"><b>*</b></span>
+                            </label>
+                            <div class="col-sm-10">
+                                <input placeholder="Perihal Surat" autocomplete="off" type="text" class="form-control"
+                                    name="dt[surat_keluar_perihal]" value="">
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="col-sm-2 control-label" style="text-align:left;">
+                                Penanda Tangan Surat <span style="color:red;"><b>*</b></span>
+                            </label>
+                            <div class="col-sm-10">
+                                <select name="dt[kode_surat_id]" class="form-control"
+                                    onchange="get_nomor()" tabindex="-1" aria-hidden="true">
+                                    <option value="">- Pilih Penanda Tangan Surat -</option>
+                                    <option value="1">Prof. dr. Ova Emilia, M.Med.Ed., Sp.OG(K)., Ph.D. [Rektor] [P]
+                                    </option>
+                                    <option value="7">Prof. Dr. Pratikno, M.Soc.Sc. [Ketua Majelis Wali Amanat] [MWA]
+                                    </option>
+                                    <option value="8">Prof. Dr. apt. Subagus Wahyuono, M.Sc. [Sekretaris Majelis Wali
+                                        Amanat] [MWA.1] </option>
+                                    <option value="9">Prof. Dr. Sulistiowati, S.H., M.Hum. [Ketua Senat Akademik ] [SA]
+                                    </option>
+                                    <option value="10">Dr. Ir. Endy Suwondo, D.E.A. [Sekretaris Senat Akademik] [SA.1]
+                                    </option>
+                                    <option value="13">Prof. Dr. Ir. Mochammad Maksum, M.Sc. [Ketua Dewan Guru Besar]
+                                        [DGB] </option>
+                                    <option value="14">Prof. Dr. Muhammad Baiquni, M.A. [Sekretaris Dewan Guru Besar]
+                                        [DGB.1] </option>
+                                    <option value="245">Prof. Dr. Wening Udasmoro, S.S., M.Hum., DEA. [Wakil Rektor
+                                        Bidang Pendidikan dan Pengajaran Universitas Gadjah Mada] [P.I] </option>
+                                    <option value="246">Ignatius Susatyo Wijoyo, SE., MM. [Wakil Rektor Bidang
+                                        Penelitian, Pengembangan Usaha, dan Kerja Sama Universitas Gadjah Mada] [P.II]
+                                    </option>
+                                    <option value="247">Arie Sujito, S.Sos. [Wakil Rektor Bidang Kemahasiswaan,
+                                        Pengabdian kepada Masyarakat, dan Alumni Universitas Gadjah Mada] [P.III]
+                                    </option>
+                                    <option value="248">Prof. Supriyadi, M.Sc., Ph.D., CMA., CA., Ak. [Wakil Rektor
+                                        Bidang Sumber Daya Manusia dan Keuangan Universitas Gadjah Mada] [P.IV]
+                                    </option>
+                                    <option value="249">Arief Setiawan Budi Nugroho, S.T., M.Eng., Ph.D. [Wakil Rektor
+                                        Bidang Perencanaan, Aset dan Sistem Informasi Universitas Gadjah Mada] [P.V]
+                                    </option>
+                                    <option value="63">Prof. Dr.Eng. Kuwat Triyana, M.Si. [Dekan ] [FMIPA] </option>
+                                    <option value="65">Dr.-Ing. MHD. Reza M.I. Pulungan, S.Si., M.Sc. [Wakil Dekan
+                                        Bidang Keuangan, Aset, dan Sumber Daya Manusia] [FMIPA.1.2] </option>
+                                    <option value="66">Dr.rer.nat. Wiwit Suryanto, S.Si., M.Si. [Wakil Dekan Bidang
+                                        Penelitian dan Pengabdian kepada Masyarakat] [FMIPA.1.3] </option>
+                                    <option value="201">Dr. Fajar Adi Kusumo, S.Si., M.Si. [Wakil Dekan Bidang Alumni,
+                                        Kerja Sama, dan Inovasi Fakultas Matematika dan Ilmu Pengetahuan Alam]
+                                        [FMIPA.1.4] </option>
+                                    <option value="202">Dr.Eng. Edi Suharyadi, S.Si., M.Eng. [Ketua Departemen Fisika]
+                                        [FMIPA.2.1] </option>
+                                    <option value="203">Anny Kartika Sari, S.Si., M.Sc., Ph.D. [Ketua Departemen IKE]
+                                        [FMIPA.2.2] </option>
+                                    <option value="204">Dr.rer.nat Nurul Hidayat Aprilita, S.Si., M.Si. [Ketua
+                                        Departemen Kimia Pengganti Antarwaktu Fakultas Matematika dan Ilmu Pengetahuan
+                                        Alam] [FMIPA.2.3] </option>
+                                    <option value="205">Dr. Nanang Susyanto, S.Si., M.Sc. [Ketua Departemen Matematika
+                                        Pengganti Antarwaktu Fakultas Matematika dan Ilmu Pengetahuan Alam] [FMIPA.2.4]
+                                    </option>
+                                    <option value="206">Choliq Chaeroni, S.E. [Kepala Kantor Administrasi] [FMIPA.3]
+                                    </option>
+                                </select><span class="select2 select2-container select2-container--default" dir="ltr"
+                                    style="width: 100%;"><span class="selection"><span
+                                            class="select2-selection select2-selection--single" role="combobox"
+                                            aria-haspopup="true" aria-expanded="false" tabindex="0"
+                                            aria-labelledby="select2-dtkode_surat_id-4i-container"><span
+                                                class="select2-selection__rendered"
+                                                id="select2-dtkode_surat_id-4i-container"
+                                                title="- Pilih Penanda Tangan Surat -">- Pilih Penanda Tangan Surat
+                                                -</span><span class="select2-selection__arrow" role="presentation"><b
+                                                    role="presentation"></b></span></span></span><span
+                                        class="dropdown-wrapper" aria-hidden="true"></span></span>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="col-sm-2 control-label" style="text-align:left;">
+                                Pengolah Surat <span style="color:red;"><b>*</b></span>
+                            </label>
+                            <div class="col-sm-10">
+                                <select name="dt[pengolah_surat_id]" class="form-control"
+                                    onchange="get_nomor()" tabindex="-1" aria-hidden="true">
+                                    <option value="">- Pilih Pengolah Surat -</option>
+                                    <option value="133">Dekanat [DEK]</option>
+                                    <option value="134">Bagian Keuangan [KEU]</option>
+                                    <option value="135">Bagian Kepegawaian [KP]</option>
+                                    <option value="136">Bagian Akademik dan Kemahasiswaan [AKD]</option>
+                                    <option value="137">Bagian Tata Usaha [TU]</option>
+                                    <option value="138">Departemen Fisika [FIS]</option>
+                                    <option value="139">Departemen IKE [IKE]</option>
+                                    <option value="140">Departemen Kimia [KIM]</option>
+                                    <option value="141">Departemen Matematika [MAT]</option>
+                                </select><span
+                                    class="select2 select2-container select2-container--default select2-container--below"
+                                    dir="ltr" style="width: 100%;"><span class="selection"><span
+                                            class="select2-selection select2-selection--single" role="combobox"
+                                            aria-haspopup="true" aria-expanded="false" tabindex="0"
+                                            aria-labelledby="select2-dtpengolah_surat_id-88-container"><span
+                                                class="select2-selection__rendered"
+                                                id="select2-dtpengolah_surat_id-88-container"
+                                                title="- Pilih Pengolah Surat -">- Pilih Pengolah Surat -</span><span
+                                                class="select2-selection__arrow" role="presentation"><b
+                                                    role="presentation"></b></span></span></span><span
+                                        class="dropdown-wrapper" aria-hidden="true"></span></span>
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <label class="col-sm-2 control-label" style="text-align:left;">
+                                Kode Perihal <span style="color:red;"><b>*</b></span>
+                            </label>
+                            <div class="col-sm-10">
+                                <select name="dt[kode_dokumen_id]" class="form-control"
+                                    onchange="get_nomor()" tabindex="-1" aria-hidden="true">
+                                    <option value="">- Pilih Kode Perihal -</option>
+                                    <option value="1">Organisasi dan Ketatalaksanaan [OT] </option>
+                                    <option value="2">Perencanaan [PR] </option>
+                                    <option value="3">Hukum [HK] </option>
+                                    <option value="4">Kepegawaian [KP] </option>
+                                    <option value="5">Pendidikan dan Pelatihan [DL] </option>
+                                    <option value="6">Ketatausahaan dan Kerumahtanggaan [TR] </option>
+                                    <option value="7">Keuangan [KU] </option>
+                                    <option value="8">Hubungan Masyarakat [HM] </option>
+                                    <option value="9">Teknologi Informasi [TI] </option>
+                                    <option value="10">Perlengkapan [PL] </option>
+                                    <option value="11">Kearsipan [KA] </option>
+                                    <option value="12">Pengawasan [PA] </option>
+                                    <option value="13">Badan Usaha [BU] </option>
+                                    <option value="14">Penerimaan Mahasiswa [TM] </option>
+                                    <option value="15">Kurikulum [KR] </option>
+                                    <option value="16">Tenaga Pendidik [TD] </option>
+                                    <option value="17">Kemahasiswaan [KM] </option>
+                                    <option value="18">Perkuliahan [PK] </option>
+                                    <option value="19">Data, Informasi, dan Pengembangan Akademik [DI] </option>
+                                    <option value="20">Penunjang Akademik [TA] </option>
+                                    <option value="21">Penelitian [PT] </option>
+                                    <option value="22">Pengabdian kepada Masyarakat [PM] </option>
+                                    <option value="23">Publikasi Jurnal/Buku [PJ] </option>
+                                    <option value="24">Penjaminan Mutu [JM] </option>
+                                    <option value="25">Tata Pamong (Organ Universitas) [TP] </option>
+                                    <option value="26">Wisuda dan Alumni [WA] </option>
+                                </select><span
+                                    class="select2 select2-container select2-container--default select2-container--below"
+                                    dir="ltr" style="width: 100%;"><span class="selection"><span
+                                            class="select2-selection select2-selection--single" role="combobox"
+                                            aria-haspopup="true" aria-expanded="false" tabindex="0"
+                                            aria-labelledby="select2-dtkode_dokumen_id-a0-container"><span
+                                                class="select2-selection__rendered"
+                                                id="select2-dtkode_dokumen_id-a0-container"
+                                                title="- Pilih Kode Perihal -">- Pilih Kode Perihal -</span><span
+                                                class="select2-selection__arrow" role="presentation"><b
+                                                    role="presentation"></b></span></span></span><span
+                                        class="dropdown-wrapper" aria-hidden="true"></span></span>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="col-sm-2 control-label" style="text-align:left;">
+                                Klasifikasi Surat <span style="color:red;"><b>*</b></span>
+                            </label>
+                            <div class="col-sm-10">
+                                <select name="dt[klasifikasi_id]" class="form-control"
+                                    onchange="get_nomor()" tabindex="-1" aria-hidden="true">
+                                    <option>- Pilih Klasifikasi Surat -</option>
+                                    <optgroup label="00  - Wisuda">
+                                        <option value="600">00.00 - Administrasi Penyelenggaraan Wisuda. Dokumen yang
+                                            berkaitan dengan administrasi penyelenggaraan wisuda, terdiri atas: 1).
+                                            berkas pendaftaran dan persyaratan wisuda; 2). surat usulan fakultas/
+                                            sekolah/ program studi, jurusan; 3). penetapan daftar wisudawan/ wisudawati;
+                                            4). penetapan panitia wisuda; 5). notula rapat panitia wisuda; dan 6).
+                                            dokumen lain yang sesuai.</option>
+                                        <option value="601">00.01 - Penyelenggaraan Wisuda. Dokumen yang berkaitan
+                                            dengan penyelenggaraan wisuda, terdiri atas: 1). daftar hadir wisudawan/
+                                            wisudawati; 2). sambutan rektor/ direktur; 3). sambutan wakil wisudawan/
+                                            wisudawati; 4). dokumentasi wisuda; dan 5). dokumen lain yang sesuai.
+                                        </option>
+                                        <option value="602">00.02 - Biodata Wisudawan/ Wisudawati. Dokumen berupa
+                                            biodata wisudawan/ wisudawati.</option>
+                                        <option value="603">00.03 - Sumpah Profesi. Dokumen yang berkaitan dengan sumpah
+                                            profesi, terdiri atas: 1). presensi; 2). berita acara; 3). naskah sumpah
+                                            profesi, dan 4). dokumen lain yang sesuai.</option>
+                                        <option value="604">00.04 - Laporan Kegiatan Wisuda. Dokumen berupa laporan
+                                            kegiatan wisuda.</option>
+                                    </optgroup>
+                                    <optgroup label="01  - Alumni">
+                                        <option value="606">01.00 - Data/ Buku Induk Alumni. Dokumen berupa data/ buku
+                                            induk alumni.</option>
+                                        <option value="607">01.01 - Statistik Alumni. Dokumen berupa data statistik
+                                            alumni.</option>
+                                        <option value="608">01.02 - Organisasi Alumni. Dokumen yang berkaitan dengan
+                                            organisasi alumni</option>
+                                        <option value="609">01.03 - Bursa Kerja/ Job Hunting/ Campus Hiring. Dokumen
+                                            yang berkaitan dengan bursa kerja/ job hunting/ campus hiring.</option>
+                                        <option value="610">01.04 - Tracer Study. Dokumen yang berkaitan dengan tracer
+                                            study.</option>
+                                    </optgroup>
+                                </select><span
+                                    class="select2 select2-container select2-container--default select2-container--focus"
+                                    dir="ltr" style="width: 100%;"><span class="selection"><span
+                                            class="select2-selection select2-selection--single" role="combobox"
+                                            aria-haspopup="true" aria-expanded="false" tabindex="0"
+                                            aria-labelledby="select2-dtklasifikasi_id-03-container"><span
+                                                class="select2-selection__rendered"
+                                                id="select2-dtklasifikasi_id-03-container"
+                                                title="- Pilih Klasifikasi Surat -">- Pilih Klasifikasi Surat
+                                                -</span><span class="select2-selection__arrow" role="presentation"><b
+                                                    role="presentation"></b></span></span></span><span
+                                        class="dropdown-wrapper" aria-hidden="true"></span></span>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="col-sm-2 control-label" style="text-align:left;">
+                                Tahun Surat <span style="color:red;"><b>*</b></span>
+                            </label>
+                            <div class="col-sm-4">
+                                <select name="dt[surat_keluar_tahun]" class="form-control"
+                                    onchange="get_nomor()" tabindex="-1" aria-hidden="true">
+                                    <option value="">- Pilih Tahun -</option>
+                                    <option value="2022">2022 </option>
+                                    <option value="2021">2021 </option>
+                                    <option value="2020">2020 </option>
+                                    <option value="2019">2019 </option>
+                                    <option value="2018">2018 </option>
+                                    <option value="2017">2017 </option>
+                                    <option value="2016">2016 </option>
+                                    <option value="2015">2015 </option>
+                                    <option value="2014">2014 </option>
+                                    <option value="2013">2013 </option>
+                                    <option value="2012">2012 </option>
+                                    <option value="2011">2011 </option>
+                                </select><span class="select2 select2-container select2-container--default" dir="ltr"
+                                    style="width: 100%;"><span class="selection"><span
+                                            class="select2-selection select2-selection--single" role="combobox"
+                                            aria-haspopup="true" aria-expanded="false" tabindex="0"
+                                            aria-labelledby="select2-dtsurat_keluar_tahun-mm-container"><span
+                                                class="select2-selection__rendered"
+                                                id="select2-dtsurat_keluar_tahun-mm-container" title="- Pilih Tahun -">-
+                                                Pilih Tahun -</span><span class="select2-selection__arrow"
+                                                role="presentation"><b
+                                                    role="presentation"></b></span></span></span><span
+                                        class="dropdown-wrapper" aria-hidden="true"></span></span>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="col-sm-2 control-label" style="text-align:left;">
+                                Nomor Surat <span style="color:red;"><b>*</b></span>
+                            </label>
+                            <div class="col-sm-4">
+                                <span id="nomorSurat">
+
+                                    <input placeholder="Nomor Surat" type="text" value="" class="form-control"
+                                        name="surat_keluar_nomor" disabled="">
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <label class="col-sm-2 control-label" style="text-align:left;">
+                                Tujuan Surat <span style="color:red;"><b>*</b></span>
+                            </label>
+                            <div class="col-sm-4">
+                                <input placeholder=" Instansi/Organisasi/Jabatan" autocomplete="off" type="text"
+                                    class="form-control" name="dt[surat_keluar_instansi]" value="">
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="col-sm-2 control-label" style="text-align:left;">
+                                Sifat Surat <span style="color:red;"><b>*</b></span>
+                            </label>
+                            <div class="col-sm-4">
+                                <select name="dt[sifat_id]" class="form-control"
+                                    tabindex="-1" aria-hidden="true">
+                                    <option value="">- Pilih Sifat Surat -</option>
+                                    <option value="1">Biasa </option>
+                                    <option value="2">Segera </option>
+                                    <option value="3">Rahasia </option>
+                                </select><span class="select2 select2-container select2-container--default" dir="ltr"
+                                    style="width: 100%;"><span class="selection"><span
+                                            class="select2-selection select2-selection--single" role="combobox"
+                                            aria-haspopup="true" aria-expanded="false" tabindex="0"
+                                            aria-labelledby="select2-dtsifat_id-8u-container"><span
+                                                class="select2-selection__rendered" id="select2-dtsifat_id-8u-container"
+                                                title="- Pilih Sifat Surat -">- Pilih Sifat Surat -</span><span
+                                                class="select2-selection__arrow" role="presentation"><b
+                                                    role="presentation"></b></span></span></span><span
+                                        class="dropdown-wrapper" aria-hidden="true"></span></span>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="col-sm-2 control-label" style="text-align:left;">
+                                Tanggal Surat <span style="color:red;"><b>*</b></span>
+                            </label>
+                            <div class="col-sm-4">
+
+                                <input type="text" autocomplete="off" name="dt[surat_keluar_tgl]"
+                                    class="form-control bsdatepicker" value="" placeholder="Tanggal Surat">
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="col-sm-2 control-label" style="text-align:left;">
+                                Isi Pesan Surat <span style="color:red;"><b>*</b></span>
+                            </label>
+                            <div class="col-sm-10">
+                                <textarea class="editor" placeholder="Isi Pesan Surat" name="dt[surat_keluar_pesan]"
+                                    style="display: none;"></textarea>
+                                <div class="note-editor note-frame panel panel-default">
+                                    <div class="note-dropzone">
+                                        <div class="note-dropzone-message"></div>
+                                    </div>
+                                    <div class="note-toolbar panel-heading">
+                                        <div class="note-btn-group btn-group note-style"><button type="button"
+                                                class="note-btn btn btn-default btn-sm note-btn-italic" tabindex="-1"
+                                                title="" data-original-title="Italic (CTRL+I)"><i
+                                                    class="fa fa-italic"></i></button><button type="button"
+                                                class="note-btn btn btn-default btn-sm note-btn-underline" tabindex="-1"
+                                                title="" data-original-title="Underline (CTRL+U)"><i
+                                                    class="fa fa-underline"></i></button></div>
+                                    </div>
+                                    <div class="note-editing-area">
+                                        <div class="note-handle">
+                                            <div class="note-control-selection">
+                                                <div class="note-control-selection-bg"></div>
+                                                <div class="note-control-holder note-control-nw"></div>
+                                                <div class="note-control-holder note-control-ne"></div>
+                                                <div class="note-control-holder note-control-sw"></div>
+                                                <div class="note-control-sizing note-control-se"></div>
+                                                <div class="note-control-selection-info"></div>
+                                            </div>
+                                        </div><textarea class="note-codable"></textarea>
+                                        <div tabindex="-1" style="position: absolute; left: -100000px; opacity: 0;"
+                                            contenteditable="true"></div>
+                                        <div class="note-editable panel-body" style="height: 100px;"
+                                            contenteditable="true">
+                                            <p><br></p>
+                                        </div>
+                                    </div>
+                                    <div class="note-statusbar">
+                                        <div class="note-resizebar">
+                                            <div class="note-icon-bar"></div>
+                                            <div class="note-icon-bar"></div>
+                                            <div class="note-icon-bar"></div>
+                                        </div>
+                                    </div>
+                                    <div class="modal link-dialog" aria-hidden="false" tabindex="-1">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header"> <button type="button" class="close"
+                                                        data-dismiss="modal" aria-label="Close"><span
+                                                            aria-hidden="true">×</span></button>
+                                                    <h4 class="modal-title">Insert Link</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="form-group"><label>Text to display</label><input
+                                                            class="note-link-text form-control" type="text"></div>
+                                                    <div class="form-group"><label>To what URL should this link
+                                                            go?</label><input class="note-link-url form-control"
+                                                            type="text" value="http://"></div>
+                                                    <div class="checkbox"><label><input type="checkbox" checked=""> Open
+                                                            in new window</label></div>
+                                                </div>
+                                                <div class="modal-footer"><button href="#"
+                                                        class="btn btn-primary note-link-btn disabled"
+                                                        disabled="">Insert Link</button></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal" aria-hidden="false" tabindex="-1">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header"> <button type="button" class="close"
+                                                        data-dismiss="modal" aria-label="Close"><span
+                                                            aria-hidden="true">×</span></button>
+                                                    <h4 class="modal-title">Insert Image</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="form-group note-group-select-from-files"><label>Select
+                                                            from files</label><input
+                                                            class="note-image-input form-control" type="file"
+                                                            name="files" accept="image/*" multiple="multiple"></div>
+                                                    <div class="form-group note-group-image-url" style="overflow:auto;">
+                                                        <label>Image URL</label><input
+                                                            class="note-image-url form-control col-md-12" type="text">
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer"><button href="#"
+                                                        class="btn btn-primary note-image-btn disabled"
+                                                        disabled="">Insert Image</button></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal" aria-hidden="false" tabindex="-1">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header"> <button type="button" class="close"
+                                                        data-dismiss="modal" aria-label="Close"><span
+                                                            aria-hidden="true">×</span></button>
+                                                    <h4 class="modal-title">Insert Video</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="form-group row-fluid"><label>Video URL? <small
+                                                                class="text-muted">(YouTube, Vimeo, Vine, Instagram,
+                                                                DailyMotion or Youku)</small></label><input
+                                                            class="note-video-url form-control span12" type="text">
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer"><button href="#"
+                                                        class="btn btn-primary note-video-btn disabled"
+                                                        disabled="">Insert Video</button></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal" aria-hidden="false" tabindex="-1">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header"> <button type="button" class="close"
+                                                        data-dismiss="modal" aria-label="Close"><span
+                                                            aria-hidden="true">×</span></button>
+                                                    <h4 class="modal-title">Help</h4>
+                                                </div>
+                                                <div class="modal-body" style="max-height: 300px; overflow: scroll;">
+                                                    <div class="help-list-item"></div><label
+                                                        style="width: 180px; margin-right: 10px;"><kbd>ENTER</kbd></label><span>Insert
+                                                        Paragraph</span>
+                                                    <div class="help-list-item"></div><label
+                                                        style="width: 180px; margin-right: 10px;"><kbd>CTRL+Z</kbd></label><span>Undoes
+                                                        the last command</span>
+                                                    <div class="help-list-item"></div><label
+                                                        style="width: 180px; margin-right: 10px;"><kbd>CTRL+Y</kbd></label><span>Redoes
+                                                        the last command</span>
+                                                    <div class="help-list-item"></div><label
+                                                        style="width: 180px; margin-right: 10px;"><kbd>TAB</kbd></label><span>Tab</span>
+                                                    <div class="help-list-item"></div><label
+                                                        style="width: 180px; margin-right: 10px;"><kbd>SHIFT+TAB</kbd></label><span>Untab</span>
+                                                    <div class="help-list-item"></div><label
+                                                        style="width: 180px; margin-right: 10px;"><kbd>CTRL+B</kbd></label><span>Set
+                                                        a bold style</span>
+                                                    <div class="help-list-item"></div><label
+                                                        style="width: 180px; margin-right: 10px;"><kbd>CTRL+I</kbd></label><span>Set
+                                                        a italic style</span>
+                                                    <div class="help-list-item"></div><label
+                                                        style="width: 180px; margin-right: 10px;"><kbd>CTRL+U</kbd></label><span>Set
+                                                        a underline style</span>
+                                                    <div class="help-list-item"></div><label
+                                                        style="width: 180px; margin-right: 10px;"><kbd>CTRL+SHIFT+S</kbd></label><span>Set
+                                                        a strikethrough style</span>
+                                                    <div class="help-list-item"></div><label
+                                                        style="width: 180px; margin-right: 10px;"><kbd>CTRL+BACKSLASH</kbd></label><span>Clean
+                                                        a style</span>
+                                                    <div class="help-list-item"></div><label
+                                                        style="width: 180px; margin-right: 10px;"><kbd>CTRL+SHIFT+L</kbd></label><span>Set
+                                                        left align</span>
+                                                    <div class="help-list-item"></div><label
+                                                        style="width: 180px; margin-right: 10px;"><kbd>CTRL+SHIFT+E</kbd></label><span>Set
+                                                        center align</span>
+                                                    <div class="help-list-item"></div><label
+                                                        style="width: 180px; margin-right: 10px;"><kbd>CTRL+SHIFT+R</kbd></label><span>Set
+                                                        right align</span>
+                                                    <div class="help-list-item"></div><label
+                                                        style="width: 180px; margin-right: 10px;"><kbd>CTRL+SHIFT+J</kbd></label><span>Set
+                                                        full align</span>
+                                                    <div class="help-list-item"></div><label
+                                                        style="width: 180px; margin-right: 10px;"><kbd>CTRL+SHIFT+NUM7</kbd></label><span>Toggle
+                                                        unordered list</span>
+                                                    <div class="help-list-item"></div><label
+                                                        style="width: 180px; margin-right: 10px;"><kbd>CTRL+SHIFT+NUM8</kbd></label><span>Toggle
+                                                        ordered list</span>
+                                                    <div class="help-list-item"></div><label
+                                                        style="width: 180px; margin-right: 10px;"><kbd>CTRL+LEFTBRACKET</kbd></label><span>Outdent
+                                                        on current paragraph</span>
+                                                    <div class="help-list-item"></div><label
+                                                        style="width: 180px; margin-right: 10px;"><kbd>CTRL+RIGHTBRACKET</kbd></label><span>Indent
+                                                        on current paragraph</span>
+                                                    <div class="help-list-item"></div><label
+                                                        style="width: 180px; margin-right: 10px;"><kbd>CTRL+NUM0</kbd></label><span>Change
+                                                        current block's format as a paragraph(P tag)</span>
+                                                    <div class="help-list-item"></div><label
+                                                        style="width: 180px; margin-right: 10px;"><kbd>CTRL+NUM1</kbd></label><span>Change
+                                                        current block's format as H1</span>
+                                                    <div class="help-list-item"></div><label
+                                                        style="width: 180px; margin-right: 10px;"><kbd>CTRL+NUM2</kbd></label><span>Change
+                                                        current block's format as H2</span>
+                                                    <div class="help-list-item"></div><label
+                                                        style="width: 180px; margin-right: 10px;"><kbd>CTRL+NUM3</kbd></label><span>Change
+                                                        current block's format as H3</span>
+                                                    <div class="help-list-item"></div><label
+                                                        style="width: 180px; margin-right: 10px;"><kbd>CTRL+NUM4</kbd></label><span>Change
+                                                        current block's format as H4</span>
+                                                    <div class="help-list-item"></div><label
+                                                        style="width: 180px; margin-right: 10px;"><kbd>CTRL+NUM5</kbd></label><span>Change
+                                                        current block's format as H5</span>
+                                                    <div class="help-list-item"></div><label
+                                                        style="width: 180px; margin-right: 10px;"><kbd>CTRL+NUM6</kbd></label><span>Change
+                                                        current block's format as H6</span>
+                                                    <div class="help-list-item"></div><label
+                                                        style="width: 180px; margin-right: 10px;"><kbd>CTRL+ENTER</kbd></label><span>Insert
+                                                        horizontal rule</span>
+                                                    <div class="help-list-item"></div><label
+                                                        style="width: 180px; margin-right: 10px;"><kbd>CTRL+K</kbd></label><span>Show
+                                                        Link Dialog</span>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <p class="text-center"><a href="http://summernote.org/"
+                                                            target="_blank">Summernote 0.8.2</a> · <a
+                                                            href="https://github.com/summernote/summernote"
+                                                            target="_blank">Project</a> · <a
+                                                            href="https://github.com/summernote/summernote/issues"
+                                                            target="_blank">Issues</a></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="row form-group">
+                <label class="col-sm-2 control-label" style="text-align:left;">
+                    Pejabat TTD <span style='color:red;'><b>*</b></span>
+                </label>
+                <div class="col-sm-10">
+
+                    <select name="dt[pejabat_id]" class="form-control sel" onchange="get_nomor()">
+                        <option value="">- Pilih  Pejabat TTD -</option>
+                        <option  value='10529' >Prof. Dr.Eng. Kuwat Triyana, M.Si. (Dekan Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='10619' >Dr.-Ing. MHD. Reza M.I. Pulungan, S.Si., M.Sc. (Wakil Dekan Bidang Keuangan, Aset dan Sumber Daya Manusia Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='135' >Dr. Iman Santoso, S.Si., M.Sc. (Kepala Laboratorium Fisika Atom Inti Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='11839' >Dr.Eng. Fahrudin Nugroho, S.Si., M.Si. (Kepala Laboratorium Fisika Atom Inti Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='136' >Dr. Wahyudi, M.S. (Kepala Laboratorium Geofisika Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='11836' >Dr. Afif Rakhman, S.Si., M.T. (Kepala Laboratorium Geofisika Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='137' >Prof. Dr. Endang Triwahyuni, M.S. (Kepala Laboratorium Kimia Analitik Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='11832' >Dr. Agus Kuncaka, DEA (Kepala Laboratorium Kimia Analitik Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='11829' >Dra. Endang Astuti, M.Si. (Kepala Laboratorium Kimia Anorganik Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='11830' >Prof. Drs. Karna Wijaya, M.Eng., Dr. rer.nat (Kepala Laboratorium Kimia Fisika Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='11846' >Prof. Dr.rer.nat. Nuryono, M.S. (Kepala Laboratorium Kimia Organik Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='11833' >Atok Zulijanto, S.Si.,M.Si.,Ph.D. (Kepala Laboratorium Analisis Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='142' >Prof. Dr. Sri Haryatmi, M.Sc. (Kepala Laboratorium Statistika Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='11881' >Dr. Gunardi, M.Si. (Kepala Laboratorium Statistika Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='11838' >Drs. Eko Sulistya, M.Si. (Kepala Laboratorium Fisika Dasar Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='144' >Deni Pranowo, S.Si., M.Si. (Kepala Laboratorium Kimia Dasar Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='11831' >Sri Sudiono, S.Si., M.Si. (Kepala Laboratorium Kimia Dasar Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='11847' >Dr. Mardhani Riasetiawan, M.T. (Kepala Laboratorium Sistem Komputer dan Jaringan Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='220' >Dr. Sumardi, M.Si. (Kepala Laboratorium Komputasi Matematika Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='11828' >Imam Solekhudin, S.Si., M.Si. (Kepala Laboratorium Komputasi Matematika Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='247' >Prof. Dr.rer.nat. Dedi Rosadi, S.Si., M.Sc. (Kepala Laboratorium Komputasi Statistika Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='11827' >Dr. Adhitya Ronnie Effendie, S.Si., M.Si., M.Sc. (Kepala Laboratorium Komputasi Statistika Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='11825' >Dr. Lukman Heryawan, S.T., M.T. (Kepala Laboratorium Rekayasa Perangkat Lunak dan Data Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='11835' >Danang Lelono, S.Si., M.T. (Kepala Laboratorium Instrumentasi Dasar Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='11880' >Drs. Sri Mulyana, M.Kom. (Kepala Laboratorium Sistem Cerdas Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='345' >Prof. Dr. Kamsul Abraha (Anggota Senat Unsur Guru Besar Tetap Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='347' >Prof. Dr. Bambang Setiaji (Anggota Senat Unsur Guru Besar Tetap Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='351' >Prof. Dr. Kusminarto (Anggota Senat Unsur Guru Besar Tetap Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='358' >Prof. Drs. Sabirin Matsyeh, Ph.D (Anggota Senat Unsur Guru Besar Tetap Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='359' >Prof. Dr. Narsito (Anggota Senat Unsur Guru Besar Tetap Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='368' >Prof. Dr. Kirbani Sri Brotopuspito (Anggota Senat Unsur Guru Besar Tetap Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='382' >Prof. Dr. Hardjono Sastrohamidjojo (Anggota Senat Unsur Guru Besar Emeritus Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='403' >Dr. Drs. Guntur Maruto, S.U. (Anggota Senat Unsur Wakil Jurusan Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='406' >Dr. Yateman Arryanto (Anggota Senat Unsur Wakil Jurusan Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='512' >Hegiandriyani, S.E. (Kepala Seksi Administrasi Keuangan dan Umum Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='530' >Sely Rosiani, S.Pd. (Kepala Seksi Akademik dan Kemahasiswaan Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='11699' >Dr.Eng. Edi Suharyadi, S.Si., M.Eng. (Ketua Departemen Fisika Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='820' >Anny Kartika Sari, S.Si., M.Sc., Ph.D. (Ketua Departemen Ilmu Komputer dan Elektronika Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='932' >Drs. Dwi Siswanta, M.Eng., Ph.D. (Ketua Program Doktor Program Studi Doktor Kimia Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='933' >Sholihun, S.Si., M.Sc., Ph.D (Ketua Program Doktor Program Studi Doktor Fisika Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='934' >Prof. Dr. Christiana Rini Indrati, M.Si. (Ketua Program Doktor Program Studi Doktor Matematika Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='935' >Drs. Suprapto, M.I.Kom. (Ketua Program Doktor Program Studi Doktor Ilmu Komputer Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='1000' >Tri Joko Raharjo, S.Si., M.Si., Ph.D. (Ketua Program Magister Program Studi Magister Kimia Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='1003' >Mirza Satriawan, S.Si., M.Si., Ph.D. (Ketua Program Magister Program Studi Magister Fisika Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='1004' >Prof. Dr. Sri Wahyuni, S.U. (Ketua Program Magister Program Studi Magister Matematika Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='1005' >Aina Musdholifah, S.Kom., M.Kom. (Ketua Program Magister Program Studi Magister Ilmu Komputer Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='1030' >Drs. Yohanes Suyanto, M.I.Kom. (Ketua Program Sarjana Program Studi Elektronika dan Instrumentasi Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='1031' >Dr.Eng. Ahmad Kusumaatmaja, S.Si., M.Sc. (Ketua Program Sarjana Program Studi Fisika Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='1032' >Sudarmaji, S.Si, M.Si. (Ketua Program Sarjana Program Studi Geofisika Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='1036' >Drs. Azhari, MT. (Ketua Program Sarjana Program Studi Ilmu Komputer Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='1040' >Indriana Kartini, S.Si., M.Si., Ph.D. (Ketua Program Sarjana Program Studi Kimia Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='1043' >Sutopo, S.Si., M.Si. (Ketua Program Sarjana Program Studi Matematika Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='1055' >Herni Utami, S.Si., M.Si. (Ketua Program Sarjana Program Studi Statistika Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='1086' >Dr. Andi Dharmawan, S.Si., M.Cs. (Sekretaris Departemen Ilmu Komputer dan Elektronika Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='1088' >Dr. Winarto Haryadi, M.Si. (Sekretaris Departemen Kimia Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='1120' >Respati Tri Swasono, S.Si., M.Phil., Ph.D (Sekretaris Program Doktor Program Studi Doktor Kimia Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='1141' >Wahyono, S.Kom., Ph.D. (Sekretaris Program Magister Program Studi Magister Ilmu Komputer Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='1143' >Dr.rer.nat. Adhitasari Suratman, S.Si., M.Si. (Sekretaris Program Magister Program Studi Magister Kimia Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='1144' >Mochamad Nukman, S.T., M.Sc. (Sekretaris Program Magister Program Studi Magister Fisika Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='1145' >Dr. Indarsih, S.Si., M.Si. (Sekretaris Program Magister Program Studi Magister Matematika Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='1149' >Drs. Bambang Nurcahyo Prastowo, M.Sc. (Sekretaris Program Sarjana Program Studi Elektronika dan Instrumentasi Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='1150' >Dr. Juliasih Partini, S.Si., M.Si. (Sekretaris Program Sarjana Program Studi Fisika Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='1151' >Dr. rer. nat. Herlan Darmawan, M.Sc. (Sekretaris Program Sarjana Program Studi Geofisika Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='1153' >Agus Sihabuddin, S.Si., M.Kom. (Sekretaris Program Sarjana Program Studi Ilmu Komputer Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='1155' >Akhmad Syoufian, Ph.D. (Sekretaris Program Sarjana Program Studi Kimia Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='1156' >Hadrian Andradi, M.Sc., Ph.D. (Sekretaris Program Sarjana Program Studi Matematika Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='1157' >Dr. Abdurakhman, S.Si., M.Si. (Sekretaris Program Sarjana Program Studi Statistika Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='11845' >Drs. Agus Harjoko, M.Sc., Ph.D. (Kepala Laboratorium Elektronika dan Instrumentasi Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='11834' >Prof. Dr.rer.nat. Indah Emilia Wijayanti, S.Si., M.Si. (Kepala Laboratorium Aljabar Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='11878' >Dr.rer.nat. Lina Aryati, M.S. (Kepala Laboratorium Matematika Terapan Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='11826' >Afiahayati, S.Kom., M.Cs., Ph.D (Kepala Laboratorium Komputer Dasar Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='11840' >Dr. Ilona Usuman, S.Si., M.Kom. (Kepala Laboratorium Elektronika Dasar Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='11837' >Dra. Chotimah, M.S. (Kepala Laboratorium Fisika Material dan Instrumentasi Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='11844' >Drs. Retantyo Wardoyo, M.Sc., Ph.D. (Kepala Laboratorium Algoritma dan Komputasi Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='3124' >Prof. Drs. Mudasir, M.Eng., Ph.D. (Ketua Senat Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='3125' >Choliq Chaeroni, S.E. (Kepala Kantor Administrasi Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='10620' >Dr.rer.nat. Wiwit Suryanto, S.Si., M.Si. (Wakil Dekan Bidang Penelitian dan Pengabdian kepada Masyarakat Fakultas Matematika dan Ilmu Pengetahuan Alam ) </option><option  value='11693' >Dr. Fajar Adi Kusumo, S.Si., M.Si. (Wakil Dekan Bidang Alumni, Kerja Sama, dan Inovasi Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='11714' >Moh. Edi Wibowo, S.Kom., M.Kom., Ph.D. (Sekretaris Program Doktor Program Studi Doktor Ilmu Komputer Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='11715' >Drs. Danardono, MPH., Ph.D. (Ketua Program Sarjana Program Studi Aktuaria Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='11716' >Solikhatun, S.Si., M.Si. (Sekretaris Program Sarjana Program Studi Aktuaria Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='11725' >Dr.rer.nat Nurul Hidayat Aprilita, S.Si., M.Si. (Ketua Departemen Kimia Pengganti Antarwaktu Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='11733' >Eddy Hartantyo, M.Si. (Sekretaris Departemen Fisika Pengganti Antarwaktu Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='11855' >Dr. Nanang Susyanto, S.Si., M.Sc. (Ketua Departemen Matematika Pengganti Antarwaktu Fakultas Matematika dan Ilmu Pengetahuan Alam) </option><option  value='11924' >Dr. Noorma Yulia Megawati, S.Si., M.Sc. (Sekretaris Departemen Matematika Pengganti Antarwaktu) </option>                    </select>
+                </div>
+            </div> -->
+
+
+                        <div class="panel-footer text-right">
+                            <button class="btn btn-primary">Simpan</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <script type="text/javascript">
+                function get_nomor() {
+                    // alert('ok');
+                    var kode_surat_id = $("select[name='dt[kode_surat_id]']").val();
+                    var klasifikasi_id = $("select[name='dt[klasifikasi_id]']").val();
+                    var kode_dokumen_id = $("select[name='dt[kode_dokumen_id]']").val();
+
+                    var kode_dokumen_id = $("select[name='dt[kode_dokumen_id]']").val();
+                    var pengolah_surat_id = $("select[name='dt[pengolah_surat_id]']").val();
+                    var surat_keluar_tahun = $("select[name='dt[surat_keluar_tahun]']").val();
+                    var klasifikasi_id = $("select[name='dt[klasifikasi_id]']").val();
+                    if (kode_dokumen_id && pengolah_surat_id && kode_surat_id && surat_keluar_tahun && klasifikasi_id) {
+                        $("#nomorSurat").load("https://admin.simaster.ugm.ac.id/surat/surat_keluar/gen_nomor/" + kode_dokumen_id + '/' + pengolah_surat_id + '/' + kode_surat_id + '/' + surat_keluar_tahun + '/' + klasifikasi_id);
+                        // $(".btn_upload").show();
+                    }
+                }
+                $(function () {
+                    $("select[name='dt[kode_dokumen_id]']").change(function () {
+                        var id = $("select[name='dt[kode_dokumen_id]']").val();
+                        if (id) {
+
+                            $.get("https://admin.simaster.ugm.ac.id/surat/surat_keluar/get_klasifikasi" + '/' + id,
+                                function (data) {
+                                    $("select[name='dt[klasifikasi_id]']").select2("val", "");
+                                    $("select[name='dt[klasifikasi_id]']").html(data);
+                                }
+                            );
+                        }
+                    });
+                    $('.editor').summernote({
+                        height: "100px",
+                        focus: true,
+                        toolbar: [
+                            ['style', ['italic', 'underline']],
+                        ]
+                    });
+                    var options = {
+                        autoclose: true,
+                        todayBtn: "linked",
+                        orientation: $('body').hasClass('right-to-left') ? "auto right" : 'auto auto',
+                        todayHighlight: true,
+                        format: 'dd-mm-yyyy'
+                    }
+                    $('.bsdatepicker').datepicker(options);
+                    $('.sel').select2({
+                        allowClear: false,
+                        closeOnSelect: true,
+                        width: '100%'
+                    });
+
+                    $(function () {
+                        $('.sel').select2({
+                            allowClear: false,
+                            closeOnSelect: true,
+                            width: '100%',
+                            // templateResult: formatOption
+                        });
+
+
+                    });
+                })
+            </script>
+        </div>
+        <footer class="px-footer" id="px-demo-footer" style="display: block;">
+            <span class="text-muted">Copyright © 2022 <b><a href="https://ugm.ac.id/" target="_blank">Universitas Gadjah
+                        Mada</a></b> - Yogyakarta, Indonesia.</span>
+        </footer>
+        <div id="busy-loading" class="modal-backdrop fade in" style="display:none;text-align: center">
+            <div class="outer">
+                <div class="middle">
+                    <div class="inner">
+                        <input type="text" data-fgcolor="#5ebd5e" data-thickness=".25">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade in" id="ugmfw-modal-def" tabindex="-1" data-backdrop="static" data-keyboard="false">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">×</button>
+                        <h4 class="modal-title"></h4>
+                    </div>
+                    <div class="modal-body"></div>
+                </div>
+            </div>
+        </div>
+        <div class="px-nav-dimmer"></div>
+    </div>
+    <div id="accessright-modals-alerts-danger" class="modal modal-alert modal-danger fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <i class="fa fa-times-circle"></i>
+                </div>
+                <div class="modal-title">Akses Pengguna</div>
+                <div class="modal-body">
+                    Mohon maaf, Anda tidak diperkenankan mengakses halaman/tautan terkait. <br>
+                    Silahkan login kembali.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://admin.simaster.ugm.ac.id/ugmfw-assets/js/demo.js?v=40b8d02bf10ad79dd188294dc69f5c5a"></script>
+    <script
+        src="https://admin.simaster.ugm.ac.id/ugmfw-assets/js/bootstrap.min.js?v=40b8d02bf10ad79dd188294dc69f5c5a"></script>
+    <script
+        src="https://admin.simaster.ugm.ac.id/ugmfw-assets/js/pixeladmin.min.js?v=40b8d02bf10ad79dd188294dc69f5c5a"></script>
+    <script
+        src="https://admin.simaster.ugm.ac.id/ugmfw-assets/js/jquery-ui-1.12.1.min.js?v=40b8d02bf10ad79dd188294dc69f5c5a"></script>
+    <script
+        src="https://admin.simaster.ugm.ac.id/ugmfw-assets/js/holder.js?v=40b8d02bf10ad79dd188294dc69f5c5a"></script>
+    <script src="https://admin.simaster.ugm.ac.id/ugmfw-assets/js/ajax.js?v=40b8d02bf10ad79dd188294dc69f5c5a"></script>
+    <script
+        src="https://admin.simaster.ugm.ac.id/ugmfw-assets/javascripts/custom.js?v=40b8d02bf10ad79dd188294dc69f5c5a"></script>
+    <script src="https://admin.simaster.ugm.ac.id/ugmfw-assets/js/main.js?v=40b8d02bf10ad79dd188294dc69f5c5a"></script>
+    <script
+        src="https://admin.simaster.ugm.ac.id/ugmfw-assets/js/ugmfw-jq.js?v=40b8d02bf10ad79dd188294dc69f5c5a"></script>
+    <script
+        src="https://admin.simaster.ugm.ac.id/ugmfw-assets/plugins/pace/js/pace.min.js?v=40b8d02bf10ad79dd188294dc69f5c5a"></script>
+    <script
+        src="https://admin.simaster.ugm.ac.id/ugmfw-assets/js/jquery.serializejson.js?v=40b8d02bf10ad79dd188294dc69f5c5a"></script>
+    <script
+        src="https://admin.simaster.ugm.ac.id/ugmfw-assets/js/custom.js?v=40b8d02bf10ad79dd188294dc69f5c5a"></script>
+
+    <script
+        src="https://admin.simaster.ugm.ac.id/ugmfw-assets/plugins/highcharts/js/highcharts.js?v=40b8d02bf10ad79dd188294dc69f5c5a"></script>
+    <script
+        src="https://admin.simaster.ugm.ac.id/ugmfw-assets/plugins/highcharts/js/modules/exporting.js?v=40b8d02bf10ad79dd188294dc69f5c5a"></script>
+    <script
+        src="https://admin.simaster.ugm.ac.id/ugmfw-assets/plugins/highcharts/js/modules/export-data.js?v=40b8d02bf10ad79dd188294dc69f5c5a"></script>
+
+    <script
+        src="https://admin.simaster.ugm.ac.id/ugmfw-assets/plugins/highcharts/js/highcharts-more.js?v=40b8d02bf10ad79dd188294dc69f5c5a"></script>
+    <script
+        src="https://admin.simaster.ugm.ac.id/ugmfw-assets/plugins/highcharts/js/modules/accessibility.js?v=40b8d02bf10ad79dd188294dc69f5c5a"></script>
+
+    <!--<i>131</i>-->
+    <script>
+        pxDemo.initializeDemoSidebar();
+        pxInit.push(function () {
+            $('#px-demo-sidebar').pxSidebar();
+            pxDemo.initializeDemo();
+        });
+    </script>
+    <div id="px-demo-sidebar" class="px-sidebar-right bg-primary" style="width: 249px; right: -249px;"><a href="#"
+            id="px-demo-sidebar-toggle" class="bg-primary b-y-1 b-l-1 text-default" data-toggle="sidebar"
+            data-target="#px-demo-sidebar" style="margin-top:50px"><i class="px-demo-sidebar-gear fa fa-cogs"></i><i
+                class="px-demo-sidebar-close fa fa-times"></i></a>
+        <div id="px-demo-sidebar-loader" class="form-loading form-loading-inverted"></div>
+        <div class="px-sidebar-content ps-container ps-theme-default ps-active-y"
+            data-ps-id="7222e66d-fc9a-693c-c053-a1b5d3d2669e">
+            <div id="px-demo-togglers">
+                <h6 class="px-demo-sidebar-header b-y-1 bg-primary darker">PENGATURAN</h6>
+                <div>
+                    <div class="box m-a-0 border-radius-0 bg-transparent">
+                        <div class="box-row">
+                            <div class="box-cell p-l-3 bg-primary"><label for="px-demo-fixed-navbar-toggler">Tajuk
+                                    tetap</label></div>
+                            <div class="box-cell p-r-3 bg-primary" style="width: 70px;"><label
+                                    for="px-demo-fixed-navbar-toggler"
+                                    class="switcher switcher-blank switcher-sm"><input type="checkbox"
+                                        id="px-demo-fixed-navbar-toggler" checked="">
+                                    <div class="switcher-indicator">
+                                        <div class="switcher-yes bg-primary darker"><i class="fa fa-check"></i></div>
+                                        <div class="switcher-no"><i class="fa fa-close"></i></div>
+                                    </div>
+                                </label></div>
+                        </div>
+                        <div class="box-row">
+                            <div class="box-cell bg-primary p-l-3"><label for="px-demo-fixed-nav-toggler">Menu
+                                    tetap</label></div>
+                            <div class="box-cell bg-primary p-r-3" style="width: 70px;"><label
+                                    for="px-demo-fixed-nav-toggler" class="switcher switcher-blank switcher-sm"><input
+                                        type="checkbox" id="px-demo-fixed-nav-toggler" checked="">
+                                    <div class="switcher-indicator">
+                                        <div class="switcher-yes bg-primary darker"><i class="fa fa-check"></i></div>
+                                        <div class="switcher-no"><i class="fa fa-close"></i></div>
+                                    </div>
+                                </label></div>
+                        </div>
+                        <div class="box-row">
+                            <div class="box-cell bg-primary p-l-3"><label for="px-demo-nav-right-toggler">Menu di
+                                    kanan</label></div>
+                            <div class="box-cell bg-primary p-r-3" style="width: 70px;"><label
+                                    for="px-demo-nav-right-toggler" class="switcher switcher-blank switcher-sm"><input
+                                        type="checkbox" id="px-demo-nav-right-toggler">
+                                    <div class="switcher-indicator">
+                                        <div class="switcher-yes bg-primary darker"><i class="fa fa-check"></i></div>
+                                        <div class="switcher-no"><i class="fa fa-close"></i></div>
+                                    </div>
+                                </label></div>
+                        </div>
+                        <div class="box-row">
+                            <div class="box-cell bg-primary p-l-3"><label for="px-demo-nav-off-canvas-toggler">Hilangkan
+                                    kanvas</label></div>
+                            <div class="box-cell bg-primary p-r-3" style="width: 70px;"><label
+                                    for="px-demo-nav-off-canvas-toggler"
+                                    class="switcher switcher-blank switcher-sm"><input type="checkbox"
+                                        id="px-demo-nav-off-canvas-toggler">
+                                    <div class="switcher-indicator">
+                                        <div class="switcher-yes bg-primary darker"><i class="fa fa-check"></i></div>
+                                        <div class="switcher-no"><i class="fa fa-close"></i></div>
+                                    </div>
+                                </label></div>
+                        </div>
+                        <div class="box-row">
+                            <div class="box-cell bg-primary p-l-3"><label for="px-demo-nav-rtl-toggler">RTL </label>
+                            </div>
+                            <div class="box-cell bg-primary p-r-3" style="width: 70px;"><label
+                                    for="px-demo-nav-rtl-toggler" class="switcher switcher-blank switcher-sm"><input
+                                        type="checkbox" id="px-demo-nav-rtl-toggler">
+                                    <div class="switcher-indicator">
+                                        <div class="switcher-yes bg-primary darker"><i class="fa fa-check"></i></div>
+                                        <div class="switcher-no"><i class="fa fa-close"></i></div>
+                                    </div>
+                                </label></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="px-demo-footer-position">
+                    <div class="box m-a-0 border-radius-0 bg-transparent">
+                        <div class="box-row">
+                            <div class="box-cell bg-primary p-l-3"><label
+                                    for="px-demo-footer-position-select">Footer</label></div>
+                            <div class="box-cell bg-primary p-r-3"><select
+                                    class="custom-select form-control input-sm bg-primary darker"
+                                    id="px-demo-footer-position-select">
+                                    <option value="static" selected="">Statis</option>
+                                    <option value="bottom">Bawah</option>
+                                    <option value="fixed">Tetap</option>
+                                </select></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h6 class="px-demo-sidebar-header bg-primary darker b-y-1">TEMA</h6>
+            <div class="px-demo-themes-list clearfix bg-primary"><label class="px-demo-themes-item"><input type="radio"
+                        class="px-demo-themes-toggler" name="px-demo-current-theme" value="default" checked=""><img
+                        src="https://admin.simaster.ugm.ac.id/ugmfw-assets/images/themes/default.png"
+                        class="px-demo-themes-thumbnail">
+                    <div class="px-demo-themes-title font-weight-semibold"><span class="text-white">Default</span>
+                        <div class="bg-primary"></div>
+                    </div>
+                </label><label class="px-demo-themes-item"><input type="radio" class="px-demo-themes-toggler"
+                        name="px-demo-current-theme" value="asphalt"><img
+                        src="https://admin.simaster.ugm.ac.id/ugmfw-assets/images/themes/asphalt.png"
+                        class="px-demo-themes-thumbnail">
+                    <div class="px-demo-themes-title font-weight-semibold"><span class="text-white">Asphalt</span>
+                        <div class="bg-primary"></div>
+                    </div>
+                </label><label class="px-demo-themes-item"><input type="radio" class="px-demo-themes-toggler"
+                        name="px-demo-current-theme" value="purple-hills"><img
+                        src="https://admin.simaster.ugm.ac.id/ugmfw-assets/images/themes/purple-hills.png"
+                        class="px-demo-themes-thumbnail">
+                    <div class="px-demo-themes-title font-weight-semibold"><span class="text-white">Purple Hills</span>
+                        <div class="bg-primary"></div>
+                    </div>
+                </label><label class="px-demo-themes-item"><input type="radio" class="px-demo-themes-toggler"
+                        name="px-demo-current-theme" value="adminflare"><img
+                        src="https://admin.simaster.ugm.ac.id/ugmfw-assets/images/themes/adminflare.png"
+                        class="px-demo-themes-thumbnail">
+                    <div class="px-demo-themes-title font-weight-semibold"><span class="text-white">Adminflare</span>
+                        <div class="bg-primary"></div>
+                    </div>
+                </label><label class="px-demo-themes-item"><input type="radio" class="px-demo-themes-toggler"
+                        name="px-demo-current-theme" value="dust"><img
+                        src="https://admin.simaster.ugm.ac.id/ugmfw-assets/images/themes/dust.png"
+                        class="px-demo-themes-thumbnail">
+                    <div class="px-demo-themes-title font-weight-semibold"><span class="text-white">Dust</span>
+                        <div class="bg-primary"></div>
+                    </div>
+                </label><label class="px-demo-themes-item"><input type="radio" class="px-demo-themes-toggler"
+                        name="px-demo-current-theme" value="frost"><img
+                        src="https://admin.simaster.ugm.ac.id/ugmfw-assets/images/themes/frost.png"
+                        class="px-demo-themes-thumbnail">
+                    <div class="px-demo-themes-title font-weight-semibold"><span class="text-white">Frost</span>
+                        <div class="bg-primary"></div>
+                    </div>
+                </label><label class="px-demo-themes-item"><input type="radio" class="px-demo-themes-toggler"
+                        name="px-demo-current-theme" value="fresh"><img
+                        src="https://admin.simaster.ugm.ac.id/ugmfw-assets/images/themes/fresh.png"
+                        class="px-demo-themes-thumbnail">
+                    <div class="px-demo-themes-title font-weight-semibold"><span class="text-white">Fresh</span>
+                        <div class="bg-primary"></div>
+                    </div>
+                </label><label class="px-demo-themes-item"><input type="radio" class="px-demo-themes-toggler"
+                        name="px-demo-current-theme" value="silver"><img
+                        src="https://admin.simaster.ugm.ac.id/ugmfw-assets/images/themes/silver.png"
+                        class="px-demo-themes-thumbnail">
+                    <div class="px-demo-themes-title font-weight-semibold"><span class="text-white">Silver</span>
+                        <div class="bg-primary"></div>
+                    </div>
+                </label><label class="px-demo-themes-item"><input type="radio" class="px-demo-themes-toggler"
+                        name="px-demo-current-theme" value="clean"><img
+                        src="https://admin.simaster.ugm.ac.id/ugmfw-assets/images/themes/clean.png"
+                        class="px-demo-themes-thumbnail">
+                    <div class="px-demo-themes-title font-weight-semibold"><span class="text-white">Clean</span>
+                        <div class="bg-primary"></div>
+                    </div>
+                </label><label class="px-demo-themes-item"><input type="radio" class="px-demo-themes-toggler"
+                        name="px-demo-current-theme" value="white"><img
+                        src="https://admin.simaster.ugm.ac.id/ugmfw-assets/images/themes/white.png"
+                        class="px-demo-themes-thumbnail">
+                    <div class="px-demo-themes-title font-weight-semibold"><span class="text-white">White</span>
+                        <div class="bg-primary"></div>
+                    </div>
+                </label><label class="px-demo-themes-item"><input type="radio" class="px-demo-themes-toggler"
+                        name="px-demo-current-theme" value="candy-black"><img
+                        src="https://admin.simaster.ugm.ac.id/ugmfw-assets/images/themes/candy-black.png"
+                        class="px-demo-themes-thumbnail">
+                    <div class="px-demo-themes-title font-weight-semibold"><span class="text-white">Candy Black</span>
+                        <div class="bg-primary"></div>
+                    </div>
+                </label><label class="px-demo-themes-item"><input type="radio" class="px-demo-themes-toggler"
+                        name="px-demo-current-theme" value="candy-blue"><img
+                        src="https://admin.simaster.ugm.ac.id/ugmfw-assets/images/themes/candy-blue.png"
+                        class="px-demo-themes-thumbnail">
+                    <div class="px-demo-themes-title font-weight-semibold"><span class="text-white">Candy Blue</span>
+                        <div class="bg-primary"></div>
+                    </div>
+                </label><label class="px-demo-themes-item"><input type="radio" class="px-demo-themes-toggler"
+                        name="px-demo-current-theme" value="candy-red"><img
+                        src="https://admin.simaster.ugm.ac.id/ugmfw-assets/images/themes/candy-red.png"
+                        class="px-demo-themes-thumbnail">
+                    <div class="px-demo-themes-title font-weight-semibold"><span class="text-white">Candy Red</span>
+                        <div class="bg-primary"></div>
+                    </div>
+                </label><label class="px-demo-themes-item"><input type="radio" class="px-demo-themes-toggler"
+                        name="px-demo-current-theme" value="candy-orange"><img
+                        src="https://admin.simaster.ugm.ac.id/ugmfw-assets/images/themes/candy-orange.png"
+                        class="px-demo-themes-thumbnail">
+                    <div class="px-demo-themes-title font-weight-semibold"><span class="text-white">Candy Orange</span>
+                        <div class="bg-primary"></div>
+                    </div>
+                </label><label class="px-demo-themes-item"><input type="radio" class="px-demo-themes-toggler"
+                        name="px-demo-current-theme" value="candy-green"><img
+                        src="https://admin.simaster.ugm.ac.id/ugmfw-assets/images/themes/candy-green.png"
+                        class="px-demo-themes-thumbnail">
+                    <div class="px-demo-themes-title font-weight-semibold"><span class="text-white">Candy Green</span>
+                        <div class="bg-primary"></div>
+                    </div>
+                </label><label class="px-demo-themes-item"><input type="radio" class="px-demo-themes-toggler"
+                        name="px-demo-current-theme" value="candy-purple"><img
+                        src="https://admin.simaster.ugm.ac.id/ugmfw-assets/images/themes/candy-purple.png"
+                        class="px-demo-themes-thumbnail">
+                    <div class="px-demo-themes-title font-weight-semibold"><span class="text-white">Candy Purple</span>
+                        <div class="bg-primary"></div>
+                    </div>
+                </label><label class="px-demo-themes-item"><input type="radio" class="px-demo-themes-toggler"
+                        name="px-demo-current-theme" value="candy-cyan"><img
+                        src="https://admin.simaster.ugm.ac.id/ugmfw-assets/images/themes/candy-cyan.png"
+                        class="px-demo-themes-thumbnail">
+                    <div class="px-demo-themes-title font-weight-semibold"><span class="text-white">Candy Cyan</span>
+                        <div class="bg-primary"></div>
+                    </div>
+                </label><label class="px-demo-themes-item"><input type="radio" class="px-demo-themes-toggler"
+                        name="px-demo-current-theme" value="mint-dark"><img
+                        src="https://admin.simaster.ugm.ac.id/ugmfw-assets/images/themes/mint-dark.png"
+                        class="px-demo-themes-thumbnail">
+                    <div class="px-demo-themes-title font-weight-semibold"><span class="text-white">Mint Dark</span>
+                        <div class="bg-primary"></div>
+                    </div>
+                </label><label class="px-demo-themes-item"><input type="radio" class="px-demo-themes-toggler"
+                        name="px-demo-current-theme" value="dark-blue"><img
+                        src="https://admin.simaster.ugm.ac.id/ugmfw-assets/images/themes/dark-blue.png"
+                        class="px-demo-themes-thumbnail">
+                    <div class="px-demo-themes-title font-weight-semibold"><span class="text-white">Dark Blue</span>
+                        <div class="bg-primary"></div>
+                    </div>
+                </label><label class="px-demo-themes-item"><input type="radio" class="px-demo-themes-toggler"
+                        name="px-demo-current-theme" value="dark-red"><img
+                        src="https://admin.simaster.ugm.ac.id/ugmfw-assets/images/themes/dark-red.png"
+                        class="px-demo-themes-thumbnail">
+                    <div class="px-demo-themes-title font-weight-semibold"><span class="text-white">Dark Red</span>
+                        <div class="bg-primary"></div>
+                    </div>
+                </label><label class="px-demo-themes-item"><input type="radio" class="px-demo-themes-toggler"
+                        name="px-demo-current-theme" value="dark-orange"><img
+                        src="https://admin.simaster.ugm.ac.id/ugmfw-assets/images/themes/dark-orange.png"
+                        class="px-demo-themes-thumbnail">
+                    <div class="px-demo-themes-title font-weight-semibold"><span class="text-white">Dark Orange</span>
+                        <div class="bg-primary"></div>
+                    </div>
+                </label><label class="px-demo-themes-item"><input type="radio" class="px-demo-themes-toggler"
+                        name="px-demo-current-theme" value="dark-green"><img
+                        src="https://admin.simaster.ugm.ac.id/ugmfw-assets/images/themes/dark-green.png"
+                        class="px-demo-themes-thumbnail">
+                    <div class="px-demo-themes-title font-weight-semibold"><span class="text-white">Dark Green</span>
+                        <div class="bg-primary"></div>
+                    </div>
+                </label><label class="px-demo-themes-item"><input type="radio" class="px-demo-themes-toggler"
+                        name="px-demo-current-theme" value="dark-purple"><img
+                        src="https://admin.simaster.ugm.ac.id/ugmfw-assets/images/themes/dark-purple.png"
+                        class="px-demo-themes-thumbnail">
+                    <div class="px-demo-themes-title font-weight-semibold"><span class="text-white">Dark Purple</span>
+                        <div class="bg-primary"></div>
+                    </div>
+                </label><label class="px-demo-themes-item"><input type="radio" class="px-demo-themes-toggler"
+                        name="px-demo-current-theme" value="dark-cyan"><img
+                        src="https://admin.simaster.ugm.ac.id/ugmfw-assets/images/themes/dark-cyan.png"
+                        class="px-demo-themes-thumbnail">
+                    <div class="px-demo-themes-title font-weight-semibold"><span class="text-white">Dark Cyan</span>
+                        <div class="bg-primary"></div>
+                    </div>
+                </label><label class="px-demo-themes-item"><input type="radio" class="px-demo-themes-toggler"
+                        name="px-demo-current-theme" value="darklight-blue"><img
+                        src="https://admin.simaster.ugm.ac.id/ugmfw-assets/images/themes/darklight-blue.png"
+                        class="px-demo-themes-thumbnail">
+                    <div class="px-demo-themes-title font-weight-semibold"><span class="text-white">Darklight
+                            Blue</span>
+                        <div class="bg-primary"></div>
+                    </div>
+                </label><label class="px-demo-themes-item"><input type="radio" class="px-demo-themes-toggler"
+                        name="px-demo-current-theme" value="darklight-red"><img
+                        src="https://admin.simaster.ugm.ac.id/ugmfw-assets/images/themes/darklight-red.png"
+                        class="px-demo-themes-thumbnail">
+                    <div class="px-demo-themes-title font-weight-semibold"><span class="text-white">Darklight Red</span>
+                        <div class="bg-primary"></div>
+                    </div>
+                </label><label class="px-demo-themes-item"><input type="radio" class="px-demo-themes-toggler"
+                        name="px-demo-current-theme" value="darklight-orange"><img
+                        src="https://admin.simaster.ugm.ac.id/ugmfw-assets/images/themes/darklight-orange.png"
+                        class="px-demo-themes-thumbnail">
+                    <div class="px-demo-themes-title font-weight-semibold"><span class="text-white">Darklight
+                            Orange</span>
+                        <div class="bg-primary"></div>
+                    </div>
+                </label><label class="px-demo-themes-item"><input type="radio" class="px-demo-themes-toggler"
+                        name="px-demo-current-theme" value="darklight-green"><img
+                        src="https://admin.simaster.ugm.ac.id/ugmfw-assets/images/themes/darklight-green.png"
+                        class="px-demo-themes-thumbnail">
+                    <div class="px-demo-themes-title font-weight-semibold"><span class="text-white">Darklight
+                            Green</span>
+                        <div class="bg-primary"></div>
+                    </div>
+                </label><label class="px-demo-themes-item"><input type="radio" class="px-demo-themes-toggler"
+                        name="px-demo-current-theme" value="darklight-purple"><img
+                        src="https://admin.simaster.ugm.ac.id/ugmfw-assets/images/themes/darklight-purple.png"
+                        class="px-demo-themes-thumbnail">
+                    <div class="px-demo-themes-title font-weight-semibold"><span class="text-white">Darklight
+                            Purple</span>
+                        <div class="bg-primary"></div>
+                    </div>
+                </label><label class="px-demo-themes-item"><input type="radio" class="px-demo-themes-toggler"
+                        name="px-demo-current-theme" value="darklight-cyan"><img
+                        src="https://admin.simaster.ugm.ac.id/ugmfw-assets/images/themes/darklight-cyan.png"
+                        class="px-demo-themes-thumbnail">
+                    <div class="px-demo-themes-title font-weight-semibold"><span class="text-white">Darklight
+                            Cyan</span>
+                        <div class="bg-primary"></div>
+                    </div>
+                </label></div>
+            <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 3px;">
+                <div class="ps-scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+            </div>
+            <div class="ps-scrollbar-y-rail" style="top: 0px; height: 233px; right: 3px;">
+                <div class="ps-scrollbar-y" tabindex="0" style="top: 0px; height: 38px;"></div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(window).load(function () {
+            menu_selected();
+            if (url) {
+                url_selected(url);
+            }
+        });
+        pxInit.unshift(function () {
+            var file = String(document.location).split('/').pop();
+            file = file.replace(/(\.html).*/i, '$1');
+            if (!/.html$/i.test(file)) {
+                file = 'index.html';
+            }
+
+            $('#px-demo-nav')
+                .find('.px-nav-item > a[href="' + file + '"]')
+                .parent()
+                .addClass('active');
+            $('#px-demo-nav').pxNav();
+            $('#px-demo-footer').pxFooter();
+        });
+        for (var i = 0, len = pxInit.length; i < len; i++) {
+            pxInit[i].call(null);
+        }
+    </script>
+
+    <div class="note-popover popover in note-link-popover bottom">
+        <div class="arrow"></div>
+        <div class="popover-content note-children-container"><span><a target="_blank"></a>&nbsp;</span>
+            <div class="note-btn-group btn-group note-link"><button type="button"
+                    class="note-btn btn btn-default btn-sm" tabindex="-1" title="" data-original-title="Edit"><i
+                        class="fa fa-link"></i></button><button type="button" class="note-btn btn btn-default btn-sm"
+                    tabindex="-1" title="" data-original-title="Unlink"><i class="fa fa-unlink"></i></button></div>
+        </div>
+    </div>
+    <div class="note-popover popover in note-image-popover bottom">
+        <div class="arrow"></div>
+        <div class="popover-content note-children-container">
+            <div class="note-btn-group btn-group note-imagesize"><button type="button"
+                    class="note-btn btn btn-default btn-sm" tabindex="-1" title=""
+                    data-original-title="Resize Full"><span class="note-fontsize-10">100%</span></button><button
+                    type="button" class="note-btn btn btn-default btn-sm" tabindex="-1" title=""
+                    data-original-title="Resize Half"><span class="note-fontsize-10">50%</span></button><button
+                    type="button" class="note-btn btn btn-default btn-sm" tabindex="-1" title=""
+                    data-original-title="Resize Quarter"><span class="note-fontsize-10">25%</span></button></div>
+            <div class="note-btn-group btn-group note-float"><button type="button"
+                    class="note-btn btn btn-default btn-sm" tabindex="-1" title="" data-original-title="Float Left"><i
+                        class="fa fa-align-left"></i></button><button type="button"
+                    class="note-btn btn btn-default btn-sm" tabindex="-1" title="" data-original-title="Float Right"><i
+                        class="fa fa-align-right"></i></button><button type="button"
+                    class="note-btn btn btn-default btn-sm" tabindex="-1" title="" data-original-title="Float None"><i
+                        class="fa fa-align-justify"></i></button></div>
+            <div class="note-btn-group btn-group note-remove"><button type="button"
+                    class="note-btn btn btn-default btn-sm" tabindex="-1" title="" data-original-title="Remove Image"><i
+                        class="fa fa-trash"></i></button></div>
+        </div>
+    </div>
+</body>
+
+</html>

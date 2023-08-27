@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Socket.IO chat</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding-bottom: 3rem;
+        background-color: #073c64;
+        font-family: "Noto Sans", sans-serif;
+        background-image: url(https://i.ibb.co/6DCsvBF/bg.png);
+      }
+
+      #toolbar {
+        background: rgba(255, 255, 255, 0.25);
+        padding: 0.25rem;
+        position: fixed;
+        z-index: 999;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        height: 4rem;
+        box-sizing: border-box;
+        backdrop-filter: blur(10px);
+      }
+
+      #form {
+        background: rgba(0, 0, 0, 0.15);
+        padding: 0.25rem;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        height: 4rem;
+        box-sizing: border-box;
+        backdrop-filter: blur(10px);
+      }
+      #input {
+        border: none;
+        padding: 0 1rem;
+        flex-grow: 1;
+        border-radius: 2rem;
+        margin: 0.25rem;
+        background: rgba(255, 255, 255, 0.75);
+        backdrop-filter: blur(10px);
+        font-size: 1rem;
+      }
+      #input:focus {
+        outline: none;
+      }
+      #form > button {
+        background: #fff;
+        border: none;
+        padding: 0 0.75rem;
+        margin: 0.25rem;
+        border-radius: 50%;
+        outline: none;
+        color: #000;
+        cursor: pointer;
+      }
+
+      #messages {
+        margin: 4rem 0 1rem 0;
+        padding: 0;
+        overflow: auto;
+        word-wrap: break-word;
+      }
+      #messages > li {
+        padding: 0.5rem 1rem;
+      }
+      #messages > li:nth-child(odd) {
+        background: #efefef;
+      }
+
+      /* CSS talk bubble */
+      .talk-bubble {
+        margin: 3px 5% 3px 5%;
+        float: right;
+        clear: both;
+        position: relative;
+        max-width: 60%;
+        height: auto;
+        background-color: #fdcb2c;
+      }
+      .round {
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+      }
+
+      /* Right triangle placed top left flush. */
+      .tri-right.left-top:after {
+        content: " ";
+        position: absolute;
+        width: 0;
+        height: 0;
+        left: -20px;
+        right: auto;
+        top: 0px;
+        bottom: auto;
+        border: 22px solid;
+        border-color: #fdcb2c transparent transparent transparent;
+      }
+
+      /* Right triangle placed top right flush. */
+      .tri-right.right-top:after {
+        content: " ";
+        position: absolute;
+        width: 0;
+        height: 0;
+        left: auto;
+        right: -10px;
+        top: 0px;
+        bottom: auto;
+        border: 10px solid;
+        border-color: #fdcb2c transparent transparent transparent;
+      }
+
+      /* talk bubble contents */
+      .talktext {
+        padding: 0.5em;
+        text-align: left;
+        line-height: 1.5em;
+      }
+      .talktext p {
+        /* remove webkit p margins */
+        -webkit-margin-before: 0em;
+        -webkit-margin-after: 0em;
+      }
+    </style>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
+      }
+    </style>
+    <style>
+      /* width */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+
+      /* Track */
+      ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 5px grey;
+      }
+
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background: #aaa;
+        border-radius: 20px;
+      }
+
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        background: #888;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="toolbar" action="">
+      <h2 style="color: white">Chat</h2>
+    </div>
+
+    <div id="messages"></div>
+
+    <form id="form" action="">
+      <input id="input" autocomplete="off" />
+      <button><span class="material-symbols-outlined"> send </span></button>
+    </form>
+
+    <script>
+      var chat = document.getElementById("chat");
+      var messages = document.getElementById("messages");
+      var form = document.getElementById("form");
+      var input = document.getElementById("input");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        if (input.value) {
+          messages.insertAdjacentHTML(
+            "beforeend",
+            `
+            <div class="talk-bubble tri-right round right-top">
+                <div class="talktext">
+                    <p>` +
+              input.value +
+              `</p>
+                </div>
+            </div>
+            `
+          );
+          input.value = "";
+        }
+      });
+      window.scrollTo(0, document.body.scrollHeight);
+    </script>
+
+
+
+
+<!-- <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+<script>
+  var socket = io('http://localhost:3000');
+
+  var chat = document.getElementById("chat");
+  var messages = document.getElementById("messages");
+  var form = document.getElementById("form");
+  var input = document.getElementById("input");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (input.value) {
+      socket.emit("chat message", input.value);
+      input.value = "";
+    }
+  });
+
+  socket.on("chat message", function (msg) {
+    messages.insertAdjacentHTML(
+      "beforeend",
+      `
+      <div class="talk-bubble tri-right round right-top">
+          <div class="talktext">
+              <p>` +
+        msg +
+        `</p>
+          </div>
+      </div>
+      `
+    );
+    window.scrollTo(0, document.body.scrollHeight);
+  });
+</script> -->
+
+
+
+
+
+  </body>
+</html>

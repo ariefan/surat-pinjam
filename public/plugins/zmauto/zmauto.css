@@ -1,0 +1,23 @@
+.zmauto-div {
+	background-color: white;
+	position: absolute;
+	z-index: 10000;
+	border: 1px;
+	border-top: 0px;
+	border-style: solid;
+	border-color: #CCC;
+	width: auto;
+	max-height: 300px;
+	overflow-y: scroll;
+	display: none;
+}
+
+.zmauto-div li {
+	list-style: none;
+	padding: 5px;
+}
+
+.zmauto-div li:hover {
+	background-color: #00AAD4;
+	color: white;
+}
