@@ -62,7 +62,7 @@ class BaseController extends Controller
             if ($router->controllerName() != "\App\Controllers\Auth" && empty(session('logged_in'))) {
                 $response->redirect(site_url('auth'));
             } elseif ($router->controllerName() == "\App\Controllers\Auth" && session('logged_in')) {
-                $response->redirect(site_url('home'));
+                $response->redirect(site_url('suratpinjam'));
             }
         }
 

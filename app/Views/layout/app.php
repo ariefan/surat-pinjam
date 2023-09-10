@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="<?= base_url('adminlte.min.css'); ?>">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+
   <style>
     .select2-container .select2-selection--single {
       height: 35px !important;
@@ -220,434 +221,27 @@
         <?php $db = \Config\Database::connect(); ?>
         <nav class="mt-2">
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-            <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-            <?php if (!in_array(session('jenis_user'), ['mahasiswa', 'hima'])): ?>
-              <li class="nav-item">
-                <a href="<?= site_url('home'); ?>"
-                  class="nav-link <?= service('router')->controllerName() == '\App\Controllers\Home' && service('router')->methodName() == 'index' ? 'active' : ''; ?>">
-                  <i class="nav-icon fas fa-home"></i>
-                  <p>Beranda</p>
-                </a>
-              </li>
-              <!-- <li class="nav-item menu-open">
-                                      <a href="#" class="nav-link ">
-                                        <i class="nav-icon far fa-envelope"></i>
-                                        <p>
-                                          Surat
-                                                                            <?php
-                                                                            $jml_notif_surat = $db->query("SELECT COUNT(1) jml_notif_surat 
-                          FROM notifications WHERE user_id = '" . session('id') . "' AND status='0'")
-                                                                              ->getResult()[0]->jml_notif_surat;
-                                                                            if ($jml_notif_surat > 0) { ?>
-                                                                  <span class="badge bg-danger">
-                                                                                                                                        <?= $jml_notif_surat; ?>
-                                                                  </span>
-                                                                            <?php } ?>
-                                          <i class="fas fa-angle-left right"></i>
-                                        </p>
-                                      </a>
-                                      <ul class="nav nav-treeview">
-                                        ...........
-                                      </ul>
-                                    </li> -->
-              <?php if (session('jenis_user') == 'admin'): ?>
-                <li class="nav-item">
-                  <a href="<?= site_url('home/hutang'); ?>"
-                    class="nav-link <?= service('router')->methodName() == 'hutang' ? 'active' : ''; ?>">
-                    <i class="fas fa-exclamation-circle nav-icon"></i>
-                    <p>Hutang</p>
-                  </a>
-                </li>
-              <?php endif; ?>
-
-              <?php if (in_array(session('jenis_user'), ['admin', 'dekan', 'departemen']) || session('gol_pic_mou') >= 1): ?>
-                <li class="nav-item">
-                  <a href="<?= site_url('perjanjian'); ?>"
-                    class="nav-link <?= service('router')->controllerName() == '\App\Controllers\Perjanjian' ? 'active' : ''; ?>">
-                    <i class="far fa-solid fa-scroll nav-icon"></i>
-                    <p>Kerja Sama</p>
-                    <?php
-                    $jml_notif_surat = $db->query("SELECT COUNT(1) jml_notif_surat 
-                      FROM notifications WHERE 
-                      notification_type = 'perjanjian' 
-                      AND user_id = '" . session('id') . "' 
-                      AND status='0'")
-                      ->getResult()[0]->jml_notif_surat;
-                    if ($jml_notif_surat > 0 && session('jenis_user') != 'verifikator')
-                      echo '<span class="badge bg-danger">' . $jml_notif_surat . '</span>';
-                    ?>
-                  </a>
-                </li>
-              <?php endif; ?>
-              <li class="nav-item">
-                <a href="<?= site_url('surattugas'); ?>"
-                  class="nav-link <?= service('router')->controllerName() == '\App\Controllers\Surattugas' ? 'active' : ''; ?>">
-                  <i class="far fa-envelope nav-icon"></i>
-                  <p>Surat Tugas</p>
-                  <?php
-                  $jml_notif_surat = $db->query("SELECT COUNT(1) jml_notif_surat 
-                      FROM notifications WHERE 
-                      notification_type = 'surat_tugas' 
-                      AND user_id = '" . session('id') . "' 
-                      AND status='0'")
-                    ->getResult()[0]->jml_notif_surat;
-                  if ($jml_notif_surat > 0 && session('jenis_user') != 'verifikator')
-                    echo '<span class="badge bg-danger">' . $jml_notif_surat . '</span>';
-                  ?>
-                </a>
-              </li>
-
-              <li class="nav-item">
-                <a href="<?= site_url('suratizintugas'); ?>"
-                  class="nav-link <?= service('router')->controllerName() == '\App\Controllers\Suratizintugas' ? 'active' : ''; ?>">
-                  <i class="far fa-envelope nav-icon"></i>
-                  <!-- <p>Surat Izin dan Tugas</p> -->
-                  <p>Surat Izin</p>
-                  <?php
-                  $jml_notif_surat = $db->query("SELECT COUNT(1) jml_notif_surat 
-                  FROM notifications WHERE 
-                  notification_type = 'surat_izin' 
-                  AND user_id = '" . session('id') . "' 
-                  AND status='0'")
-                    ->getResult()[0]->jml_notif_surat;
-                  if ($jml_notif_surat > 0 && session('jenis_user') != 'verifikator')
-                    echo '<span class="badge bg-danger">' . $jml_notif_surat . '</span>';
-                  ?>
-                </a>
-              </li>
-
-              <li class="nav-item">
-                <a href="<?= base_url('suratkeputusan'); ?>"
-                  class="nav-link <?= service('router')->controllerName() == '\App\Controllers\Suratkeputusan' ? 'active' : ''; ?>">
-                  <i class="far fa-envelope nav-icon"></i>
-                  <p>Surat Keputusan</p>
-                  <?php
-                  $jml_notif_surat = $db->query("SELECT COUNT(1) jml_notif_surat 
-                      FROM notifications WHERE 
-                      notification_type = 'surat_keputusan' 
-                      AND user_id = '" . session('id') . "' 
-                      AND status='0'")
-                    ->getResult()[0]->jml_notif_surat;
-                  if ($jml_notif_surat > 0 && session('jenis_user') != 'verifikator')
-                    echo '<span class="badge bg-danger">' . $jml_notif_surat . '</span>';
-                  ?>
-                </a>
-              </li>
-
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="nav-icon fas fa-circle"></i>
-                  <p>
-                    Akademik
-                    <i class="right fas fa-angle-left"></i>
-                  </p>
-                </a>
-                <ul class="nav nav-treeview" style="display: none;">
-                  <?php if (in_array(session('jenis_user'), ['admin', 'verifikator', 'tendik', 'dekan', 'wadek', 'dosen', 'departemen'])): ?>
-                    <li class="nav-item">
-                      <a href="<?= site_url('suratbandos'); ?>"
-                        class="nav-link <?= service('router')->controllerName() == '\App\Controllers\suratbandos' ? 'active' : ''; ?>">
-                        &nbsp;&nbsp;&nbsp;
-                        <i class="far fa-envelope nav-icon"></i>
-                        <p>Surat Bantuan Dosen</p>
-                        <?php
-                        $jml_notif_surat = $db->query("SELECT COUNT(1) jml_notif_surat 
-                      FROM notifications WHERE 
-                      notification_type = 'surat_bandos' 
-                      AND user_id = '" . session('id') . "' 
-                      AND status='0'")
-                          ->getResult()[0]->jml_notif_surat;
-                        if ($jml_notif_surat > 0 && session('jenis_user') != 'verifikator')
-                          echo '<span class="badge bg-danger">' . $jml_notif_surat . '</span>';
-                        ?>
-                      </a>
-                    </li>
-                  <?php endif; ?>
-                  <li class="nav-item">
-                    <a href="<?= site_url('suratketeranganlulus'); ?>"
-                      class="nav-link <?= service('router')->controllerName() == '\App\Controllers\Suratketeranganlulus' ? 'active' : ''; ?>">
-                      &nbsp;&nbsp;&nbsp;
-                      <i class="far fa-envelope nav-icon"></i>
-                      <p>Surat Keterangan Lulus</p>
-                      <?php
-                      $jml_notif_surat = $db->query("SELECT COUNT(1) jml_notif_surat 
-                    FROM notifications WHERE 
-                    notification_type = 'surat_keterangan_lulus' 
-                    AND user_id = '" . session('id') . "' 
-                    AND status='0'")
-                        ->getResult()[0]->jml_notif_surat;
-                      if ($jml_notif_surat > 0 && session('jenis_user') != 'verifikator')
-                        echo '<span class="badge bg-danger">' . $jml_notif_surat . '</span>';
-                      ?>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="<?= site_url('suratakademik'); ?>"
-                      class="nav-link <?= service('router')->controllerName() == '\App\Controllers\Suratakademik' ? 'active' : ''; ?>">
-                      &nbsp;&nbsp;&nbsp;
-                      <i class="far fa-envelope nav-icon"></i>
-                      <p>Surat Tagihan Nilai</p>
-                      <?php
-                      $jml_notif_surat = $db->query("SELECT COUNT(1) jml_notif_surat 
-                          FROM notifications WHERE 
-                          notification_type = 'surat_akademik' 
-                          AND user_id = '" . session('id') . "' 
-                          AND status='0'")
-                        ->getResult()[0]->jml_notif_surat;
-                      if ($jml_notif_surat > 0 && session('jenis_user') != 'verifikator')
-                        echo '<span class="badge bg-danger">' . $jml_notif_surat . '</span>';
-                      ?>
-                    </a>
-                  </li>
-                </ul>
-              </li>
-            <?php endif; ?>
-
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="<?= site_url('gedung'); ?>"
+                class="nav-link <?= service('router')->controllerName() == '\App\Controllers\Gedung' && service('router')->methodName() == 'index' ? 'active' : ''; ?>">
                 <i class="nav-icon fas fa-circle"></i>
-                <p>
-                  Kemahasiswaan
-                  <i class="right fas fa-angle-left"></i>
-                </p>
+                <p>Gedung</p>
               </a>
-              <ul class="nav nav-treeview" style="display: none;">
-                <li class="nav-item">
-                  <a href="<?= site_url('surataktif'); ?>"
-                    class="nav-link <?= service('router')->controllerName() == '\App\Controllers\Surataktif' ? 'active' : ''; ?>">
-                    &nbsp;&nbsp;&nbsp;
-                    <i class="far fa-envelope nav-icon"></i>
-                    <p>Surat Aktif</p>
-                    <?php
-                    $jml_notif_surat = $db->query("SELECT COUNT(1) jml_notif_surat 
-                    FROM notifications WHERE 
-                    notification_type = 'surat_aktif' 
-                    AND user_id = '" . session('id') . "' 
-                    AND status='0'")
-                      ->getResult()[0]->jml_notif_surat;
-                    if ($jml_notif_surat > 0 && session('jenis_user') != 'verifikator')
-                      echo '<span class="badge bg-danger">' . $jml_notif_surat . '</span>';
-                    ?>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="<?= site_url('suratkp'); ?>"
-                    class="nav-link <?= service('router')->controllerName() == '\App\Controllers\Suratkp' ? 'active' : ''; ?>">
-                    &nbsp;&nbsp;&nbsp;
-                    <i class="far fa-envelope nav-icon"></i>
-                    <p>Surat Kerja Praktik</p>
-                    <?php
-                    $jml_notif_surat = $db->query("SELECT COUNT(1) jml_notif_surat 
-                    FROM notifications WHERE 
-                    notification_type = 'surat_kp' 
-                    AND user_id = '" . session('id') . "' 
-                    AND status='0'")
-                      ->getResult()[0]->jml_notif_surat;
-                    if ($jml_notif_surat > 0 && session('jenis_user') != 'verifikator')
-                      echo '<span class="badge bg-danger">' . $jml_notif_surat . '</span>';
-                    ?>
-                  </a>
-                </li>
-                <!-- <li class="nav-item">
-                  <a href="<?= site_url('suratrekomendasi'); ?>"
-                    class="nav-link <?= service('router')->controllerName() == '\App\Controllers\Suratrekomendasi' ? 'active' : ''; ?>">
-                    &nbsp;&nbsp;&nbsp;
-                    <i class="far fa-envelope nav-icon"></i>
-                    <p>Surat Rekomendasi</p>
-                    <?php
-                    $jml_notif_surat = $db->query("SELECT COUNT(1) jml_notif_surat 
-                        FROM notifications WHERE 
-                        notification_type = 'surat_rekomendasi' 
-                        AND user_id = '" . session('id') . "' 
-                        AND status='0'")
-                      ->getResult()[0]->jml_notif_surat;
-                    if ($jml_notif_surat > 0 && session('jenis_user') != 'verifikator')
-                      echo '<span class="badge bg-danger">' . $jml_notif_surat . '</span>';
-                    ?>
-                  </a>
-                </li> -->
-              </ul>
             </li>
             <li class="nav-item">
-              <a href="<?= base_url('yudisium'); ?>"
-                class="nav-link <?= service('router')->controllerName() == '\App\Controllers\Yudisium' ? 'active' : ''; ?>">
-                <i class="far fa-envelope nav-icon"></i>
-                <p>Yudisium</p>
-                <?php
-                $jml_notif_surat = $db->query("SELECT COUNT(1) jml_notif_surat 
-                    FROM notifications WHERE 
-                    notification_type = 'yudisium' 
-                    AND user_id = '" . session('id') . "' 
-                    AND status='0'")
-                  ->getResult()[0]->jml_notif_surat;
-                if ($jml_notif_surat > 0)
-                  echo '<span class="badge bg-danger">' . $jml_notif_surat . '</span>';
-                ?>
+              <a href="<?= site_url('ruang'); ?>"
+                class="nav-link <?= service('router')->controllerName() == '\App\Controllers\Ruang' && service('router')->methodName() == 'index' ? 'active' : ''; ?>">
+                <i class="nav-icon fas fa-circle"></i>
+                <p>Ruang</p>
               </a>
             </li>
-
             <li class="nav-item">
-              <a href="<?= base_url('matakuliah'); ?>"
-                class="nav-link <?= service('router')->controllerName() == '\App\Controllers\Matakuliah' ? 'active' : ''; ?>">
-                <p>&nbsp;</p>
-                <i class="fa-solid fa-book-open"></i>
-                <p>&nbsp;</p>
-                <p>Mata Kuliah</p>
+              <a href="<?= site_url('suratpeminjaman'); ?>"
+                class="nav-link <?= service('router')->controllerName() == '\App\Controllers\SuratPeminjaman' && service('router')->methodName() == 'index' ? 'active' : ''; ?>">
+                <i class="nav-icon fas fa-circle"></i>
+                <p>Surat Pinjam</p>
               </a>
             </li>
-
-            <li class="nav-item">
-              <!-- <a href="#" onclick="alert('Mohon Maaf Menu Buat Surat Masih Dalam Pengembangan');" class="nav-link"> -->
-              <a href="<?= base_url('buatsurat'); ?>"
-                class="nav-link <?= service('router')->controllerName() == '\App\Controllers\Buatsurat' ? 'active' : ''; ?>">
-                <i class="far fa-envelope nav-icon"></i>
-                <p>Buat Surat</p>
-                <?php
-                $jml_notif_surat = $db->query("SELECT COUNT(1) jml_notif_surat 
-                    FROM notifications WHERE 
-                    notification_type = 'buat_surat' 
-                    AND user_id = '" . session('id') . "' 
-                    AND status='0'")
-                  ->getResult()[0]->jml_notif_surat;
-                if ($jml_notif_surat > 0)
-                  echo '<span class="badge bg-danger">' . $jml_notif_surat . '</span>';
-                ?>
-              </a>
-            </li>
-            <!-- <li class="nav-item">
-              <a href="#" onclick="alert('Mohon Maaf Menu Buat Surat Masih Dalam Pengembangan');" class="nav-link">
-              <a href="<?= base_url('suratgdocs'); ?>"
-                class="nav-link <?= service('router')->controllerName() == '\App\Controllers\Buatsurat' ? 'active' : ''; ?>">
-                <i class="far fa-envelope nav-icon"></i>
-                <p>Surat GDocs</p>
-                <?php
-                $jml_notif_surat = $db->query("SELECT COUNT(1) jml_notif_surat 
-                    FROM notifications WHERE 
-                    notification_type = 'surat_gdocs' 
-                    AND user_id = '" . session('id') . "' 
-                    AND status='0'")
-                  ->getResult()[0]->jml_notif_surat;
-                if ($jml_notif_surat > 0)
-                  echo '<span class="badge bg-danger">' . $jml_notif_surat . '</span>';
-                ?>
-              </a>
-            </li> -->
-            <?php if (!in_array(session('jenis_user'), ['mahasiswa', 'hima'])): ?>
-              <!-- <li class="nav-item">
-                                                  <a href="#" onclick="alert('Mohon Maaf Surat Pengesahan Belum Dibuat');" class="nav-link">
-                                                    <i class="far fa-envelope nav-icon"></i>
-                                                    <p>Surat Pengesahan</p>
-                                                  </a>
-                                                </li> -->
-              <?php if (in_array(session('jenis_user'), ['admin', 'verifikator', 'tendik', 'dekan', 'wadek', 'dosen', 'departemen'])): ?>
-                <li class="nav-item">
-                  <!-- <a href="#" onclick="alert('Mohon Maaf Menu Penomoran Surat Hanya Boleh Diakses Oleh Fakultas');" class="nav-link"> -->
-                  <a href="<?= base_url('penomoransurat'); ?>"
-                    class="nav-link <?= service('router')->controllerName() == '\App\Controllers\Penomoransurat' ? 'active' : ''; ?>">
-                    <i class="fas fa-list-ol nav-icon"></i>
-                    <p>Penomoran Surat</p>
-                  </a>
-                </li>
-              <?php endif; ?>
-              <!-- <li class="nav-item">
-                <a href="<?= base_url('p2m/index'); ?>"
-                  class="nav-link <?= service('router')->controllerName() == '\App\Controllers\P2M' ? 'active' : ''; ?>">
-                  <i class="nav-icon fas fa-newspaper"></i>
-                  <p>P2M</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="<?= base_url('p2m/index'); ?>"
-                  class="nav-link <?= service('router')->controllerName() == '\App\Controllers\P2M' ? 'active' : ''; ?>">
-                  <i class="nav-icon fas fa-newspaper"></i>
-                  <p>P2M</p>
-                </a>
-              </li> -->
-              <li class="nav-item">
-                <a href="<?= base_url('chat/index'); ?>"
-                  class="nav-link <?= service('router')->controllerName() == '\App\Controllers\Chat' ? 'active' : ''; ?>">
-                  <i class="nav-icon fas fa-message"></i>
-                  <p>Obrolan <span id="total_unread"></span></p>
-                </a>
-              </li>
-            <?php endif; ?>
-            <?php if (session('jenis_user') == 'admin') { ?>
-              <li class="nav-item">
-                <a href="<?= site_url('user'); ?>"
-                  class="nav-link <?= service('router')->controllerName() == '\App\Controllers\User' ? 'active' : ''; ?>">
-                  <i class="nav-icon fas fa-person"></i>
-                  <p>User</p>
-                </a>
-              </li>
-
-              <?php if (in_array(session('jenis_user'), ['admin', 'verifikator'])): ?>
-                <!-- <?php if (session('gol_pic_mou') == "1" || session('gol_pic_mou') == "2"): ?>
-                <li class="nav-item">
-                  <a href="<?= site_url('mahasiswa'); ?>"
-                    class="nav-link <?= service('router')->controllerName() == '\App\Controllers\Mahasiswa' ? 'active' : ''; ?>">
-                    <i class="nav-icon fas fa-light fa-user"></i>
-                    <p>User Mahasiswa</p>
-                  </a>
-                </li>
-                <?php endif ?> -->
-              <?php endif; ?>
-
-              <?php if (in_array(session('jenis_user'), ['admin', 'verifikator'])): ?>
-                <li class="nav-item">
-                  <a href="<?= site_url('mahasiswa'); ?>"
-                    class="nav-link <?= service('router')->controllerName() == '\App\Controllers\Mahasiswa' ? 'active' : ''; ?>">
-                    <i class="nav-icon fas fa-light fa-user"></i>
-                    <p>User Mahasiswa</p>
-                  </a>
-                </li>
-              <?php endif; ?>
-              <?php if (in_array(session('jenis_user'), ['admin']) || session('gol_pic_mou') == 2): ?>
-                <li class="nav-item">
-                  <a href="<?= site_url('pic'); ?>"
-                    class="nav-link <?= service('router')->controllerName() == '\App\Controllers\Pic' ? 'active' : ''; ?>">
-                    <i class="nav-icon fas fa-light fa-user"></i>
-                    <p>User PIC</p>
-                  </a>
-                </li>
-              <?php endif; ?>
-
-              <!-- <li class="nav-item">
-                <a href="<?= site_url('pic'); ?>"
-                  class="nav-link <?= service('router')->controllerName() == '\App\Controllers\Pic' ? 'active' : ''; ?>">
-                  <i class="nav-icon fas fa-id-badge"></i>
-                  <p>User PIC</p>
-                </a>
-              </li> -->
-              <li class="nav-item">
-                <a href="<?= site_url('stats'); ?>"
-                  class="nav-link <?= service('router')->controllerName() == '\App\Controllers\Stats' ? 'active' : ''; ?>">
-                  <i class="nav-icon fas fa-table"></i>
-                  <p>Indikator</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="<?= site_url('peraturan'); ?>"
-                  class="nav-link <?= service('router')->controllerName() == '\App\Controllers\Peraturan' ? 'active' : ''; ?>">
-                  <i class="nav-icon fas fa-gavel"></i>
-                  <p>Peraturan</p>
-                </a>
-              </li>
-            <?php } ?>
-            <!-- <li class="nav-item">
-              <a href="<?= base_url('app.apk'); ?>" class="nav-link">
-                <i class="nav-icon fas fa-mobile"></i>
-                <p>Aplikasi Mobile</p>
-              </a>
-            </li> -->
-            <!-- <li class="nav-item menu-open">
-            <a href="<?= site_url('auth/logout'); ?>" class="nav-link">
-              <i class="nav-icon fas fa-user"></i>
-              <p>
-                Logout
-              </p>
-            </a>
-          </li> -->
           </ul>
         </nav>
         <!-- /.sidebar-menu -->
@@ -693,6 +287,7 @@
       }
       ?>
 
+      <!-- <div id="app"></div> -->
 
       <?= $this->renderSection('content') ?>
     </div>
@@ -801,7 +396,7 @@
 
   <script>
     $(document).ready(function () {
-      $('select').select2();
+      $('select:not(.no-select2)')
     });
 
     // $(function () {

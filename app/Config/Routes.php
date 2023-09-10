@@ -17,7 +17,7 @@ if (file_exists(SYSTEMPATH . 'Config/Routes.php')) {
  * --------------------------------------------------------------------
  */
 $routes->setDefaultNamespace('App\Controllers');
-$routes->setDefaultController('Home');
+$routes->setDefaultController('Suratpeminjaman');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
@@ -32,7 +32,7 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 
-$routes->get('/', 'Home::index');
+// $routes->get('/', 'Home::index');
 
 // $routes->get('/api/auth/home', 'Home::index', ['filter' => 'auth']);
 $routes->post('api/auth/login', 'Api\Auth::login');
@@ -45,7 +45,9 @@ $routes->post('api/todo/(:num)/toggle', 'Api\Todo::toggle/$1');
 $routes->resource('buatsuratthreadchat');
 $routes->get('api/crypto/ping', 'Api\Crypto::ping');
 
-$routes->resource('api/surat-pinjam', ['controller' => 'Api\SuratPinjamController']);
+$routes->resource('api/gedung', ['controller' => 'Api\GedungController']);
+$routes->resource('api/ruang', ['controller' => 'Api\RuangController']);
+$routes->resource('api/surat-peminjaman', ['controller' => 'Api\SuratPeminjamanController']);
 
 /*
  * --------------------------------------------------------------------
